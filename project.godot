@@ -16,10 +16,23 @@ run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://assets/icon.svg"
 
+[autoload]
+
+EventBus="*res://EventBus.gd"
+
 [display]
 
 window/size/window_width_override=2304
 window/size/window_height_override=1296
+
+[layer_names]
+
+2d_physics/layer_1="Finger"
+2d_physics/layer_2="Blood"
+2d_physics/layer_3="Mosquito"
+2d_physics/layer_4="Spider"
+2d_physics/layer_5="Frog"
+2d_physics/layer_6="Thumbtack"
 
 [rendering]
 

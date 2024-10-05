@@ -18,6 +18,8 @@ radius = 24.0
 height = 84.0
 
 [node name="Blood drop" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
 mass = 1000.0
 gravity_scale = 8.0
 angular_damp = 5.633

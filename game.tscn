@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmvp2b2kh1tqm"]
+[gd_scene load_steps=8 format=3 uid="uid://dmvp2b2kh1tqm"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_8mif2"]
 [ext_resource type="PackedScene" uid="uid://g2egjj0way1e" path="res://pointer/finger.tscn" id="1_xqm73"]
@@ -6,9 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://b8g2i44cwdtvh" path="res://dangling/mosquito.tscn" id="4_xac2r"]
 [ext_resource type="PackedScene" uid="uid://bhrnso07lrta5" path="res://dangling/spider.tscn" id="5_aeytp"]
 [ext_resource type="PackedScene" uid="uid://yadkjwi1eyn5" path="res://dangling/frog.tscn" id="6_naqcg"]
+[ext_resource type="PackedScene" uid="uid://d2e5o1u66fmrk" path="res://pointer/thumbtack.tscn" id="7_ljwwb"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_8mif2")
+
+[node name="Thumbtack" parent="." instance=ExtResource("7_ljwwb")]
+position = Vector2(336, 568)
 
 [node name="Finger" parent="." instance=ExtResource("1_xqm73")]
 unique_name_in_owner = true
