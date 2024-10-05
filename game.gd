@@ -5,6 +5,9 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 @onready var joint_scene: PackedScene = preload("res://dangling/joint.tscn")
 @onready var blood_scene: PackedScene = preload("res://dangling/blood_drop.tscn")
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = %AudioStreamPlayer2D
+
+@export var aie_sounds: Array[AudioStream]
 
 
 func _ready() -> void:
@@ -29,5 +32,8 @@ func setup_dangling() -> void:
 		current_anchor = child
 		
 func _on_pricked() -> void:
+	var aie: AudioStream = aie_sounds.pick_random()
+	audio_stream_player_2d.stream = aie
+	audio_stream_player_2d.play()
 	animation_player.play("pricked")
 	

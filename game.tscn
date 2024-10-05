@@ -1,9 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmvp2b2kh1tqm"]
+[gd_scene load_steps=14 format=3 uid="uid://dmvp2b2kh1tqm"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_8mif2"]
 [ext_resource type="PackedScene" uid="uid://g2egjj0way1e" path="res://pointer/finger.tscn" id="1_xqm73"]
+[ext_resource type="AudioStream" uid="uid://b680uu4n7beyo" path="res://assets/sounds/aie2.wav" id="3_ck6k0"]
 [ext_resource type="PackedScene" uid="uid://cnyp1yfsumkta" path="res://dangling/blood_drop.tscn" id="3_m0gvb"]
+[ext_resource type="AudioStream" uid="uid://c3rmqsos006vl" path="res://assets/sounds/aie3.wav" id="4_aq12f"]
+[ext_resource type="AudioStream" uid="uid://b6li86k5d0n22" path="res://assets/sounds/aie4.wav" id="5_3hjvq"]
+[ext_resource type="AudioStream" uid="uid://dvfxgkq1xj52h" path="res://assets/sounds/aie1.wav" id="5_c86kp"]
+[ext_resource type="AudioStream" uid="uid://ccb512mqllc0m" path="res://assets/sounds/aie5.wav" id="6_vffpu"]
 [ext_resource type="PackedScene" uid="uid://d2e5o1u66fmrk" path="res://pointer/thumbtack.tscn" id="7_ljwwb"]
+[ext_resource type="AudioStream" uid="uid://wcegmh6he1mg" path="res://assets/sounds/aie6.wav" id="7_uo284"]
 
 [sub_resource type="Animation" id="Animation_euinb"]
 resource_name = "pricked"
@@ -91,6 +97,7 @@ _data = {
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_8mif2")
+aie_sounds = Array[AudioStream]([ExtResource("5_c86kp"), ExtResource("3_ck6k0"), ExtResource("4_aq12f"), ExtResource("5_3hjvq"), ExtResource("6_vffpu"), ExtResource("7_uo284")])
 
 [node name="Thumbtack" parent="." instance=ExtResource("7_ljwwb")]
 unique_name_in_owner = true
@@ -115,3 +122,7 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_0wwxt")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+bus = &"SFX"
