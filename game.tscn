@@ -108,7 +108,7 @@ aie_sounds = Array[AudioStream]([ExtResource("5_c86kp"), ExtResource("3_ck6k0"),
 ahh_sounds = Array[AudioStream]([ExtResource("8_id1fx"), ExtResource("9_y0xir"), ExtResource("10_tloa7"), ExtResource("11_e06no"), ExtResource("12_g3h8h"), ExtResource("13_qoikm")])
 
 [node name="Bandaid" parent="." instance=ExtResource("11_5r8g6")]
-position = Vector2(515, 1077)
+position = Vector2(2012, 461)
 
 [node name="Thumbtack" parent="." instance=ExtResource("7_ljwwb")]
 unique_name_in_owner = true

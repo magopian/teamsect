@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dwk6wx8a5ftlb"]
+[gd_scene load_steps=11 format=3 uid="uid://dwk6wx8a5ftlb"]
 
 [ext_resource type="Texture2D" uid="uid://bd7gyp60hjk5v" path="res://assets/sprites/bandaid.png" id="1_4xd3o"]
 [ext_resource type="Script" path="res://finish/bandaid.gd" id="1_6asie"]
+[ext_resource type="Texture2D" uid="uid://dar76tgq0jj1q" path="res://assets/sprites/win_here.png" id="3_8l2cy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jl6hk"]
 animations = [{
@@ -34,6 +35,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0, 3.0, 0.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_dxhhw"]
 length = 0.001
@@ -48,6 +61,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fs0tf"]
@@ -90,5 +115,9 @@ libraries = {
 scale = Vector2(4.51389, 4.47531)
 energy = 0.0
 texture = SubResource("GradientTexture2D_67fxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("3_8l2cy")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
