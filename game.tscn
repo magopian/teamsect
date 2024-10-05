@@ -136,6 +136,6 @@ libraries = {
 "": SubResource("AnimationLibrary_0wwxt")
 }
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 bus = &"SFX"

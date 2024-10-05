@@ -5,7 +5,7 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 @onready var joint_scene: PackedScene = preload("res://dangling/joint.tscn")
 @onready var blood_scene: PackedScene = preload("res://dangling/blood_drop.tscn")
-@onready var audio_stream_player_2d: AudioStreamPlayer2D = %AudioStreamPlayer2D
+@onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 
 @export var aie_sounds: Array[AudioStream]
 @export var ahh_sounds: Array[AudioStream]
@@ -35,12 +35,12 @@ func setup_dangling() -> void:
 		
 func _on_pricked() -> void:
 	var aie: AudioStream = aie_sounds.pick_random()
-	audio_stream_player_2d.stream = aie
-	audio_stream_player_2d.play()
+	audio_stream_player.stream = aie
+	audio_stream_player.play()
 	animation_player.play("pricked")
 	
 func _on_blood_fixed(_body: RigidBody2D) -> void:
 	var ahh: AudioStream = ahh_sounds.pick_random()
-	audio_stream_player_2d.stream = ahh
-	audio_stream_player_2d.play()
+	audio_stream_player.stream = ahh
+	audio_stream_player.play()
 	animation_player.play_backwards("pricked")
