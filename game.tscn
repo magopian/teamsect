@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dmvp2b2kh1tqm"]
+[gd_scene load_steps=22 format=3 uid="uid://dmvp2b2kh1tqm"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_8mif2"]
 [ext_resource type="PackedScene" uid="uid://g2egjj0way1e" path="res://pointer/finger.tscn" id="1_xqm73"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://b8drdmnd5e0cg" path="res://assets/sounds/ahh4.wav" id="11_e06no"]
 [ext_resource type="AudioStream" uid="uid://bvjqwxc08vfo2" path="res://assets/sounds/ahh5.wav" id="12_g3h8h"]
 [ext_resource type="AudioStream" uid="uid://bayvfu26k3q7y" path="res://assets/sounds/ahh6.wav" id="13_qoikm"]
+[ext_resource type="PackedScene" uid="uid://cjvlbipxsf1ct" path="res://shaker.tscn" id="18_mygyj"]
 
 [sub_resource type="Animation" id="Animation_5r065"]
 length = 0.001
@@ -129,6 +130,9 @@ collision_mask = 0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
+
+[node name="CameraShaker" parent="Camera2D" instance=ExtResource("18_mygyj")]
+unique_name_in_owner = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
