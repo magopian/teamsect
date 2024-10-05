@@ -1,13 +1,99 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmvp2b2kh1tqm"]
+[gd_scene load_steps=8 format=3 uid="uid://dmvp2b2kh1tqm"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_8mif2"]
 [ext_resource type="PackedScene" uid="uid://g2egjj0way1e" path="res://pointer/finger.tscn" id="1_xqm73"]
+[ext_resource type="PackedScene" uid="uid://cnyp1yfsumkta" path="res://dangling/blood_drop.tscn" id="3_m0gvb"]
 [ext_resource type="PackedScene" uid="uid://d2e5o1u66fmrk" path="res://pointer/thumbtack.tscn" id="7_ljwwb"]
+
+[sub_resource type="Animation" id="Animation_euinb"]
+resource_name = "pricked"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Thumbtack:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dangling/Blood drop:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Dangling/Blood drop:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_5r065"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Thumbtack:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dangling/Blood drop:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Dangling/Blood drop:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0wwxt"]
+_data = {
+"RESET": SubResource("Animation_5r065"),
+"pricked": SubResource("Animation_euinb")
+}
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_8mif2")
 
 [node name="Thumbtack" parent="." instance=ExtResource("7_ljwwb")]
+unique_name_in_owner = true
 position = Vector2(1135, 1072)
 
 [node name="Finger" parent="." instance=ExtResource("1_xqm73")]
@@ -17,5 +103,15 @@ position = Vector2(1146, 528)
 [node name="Dangling" type="Node2D" parent="."]
 unique_name_in_owner = true
 
+[node name="Blood drop" parent="Dangling" instance=ExtResource("3_m0gvb")]
+visible = false
+scale = Vector2(1e-05, 1e-05)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_0wwxt")
+}

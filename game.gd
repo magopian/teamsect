@@ -2,14 +2,23 @@ extends Node2D
 
 @onready var finger: RigidBody2D = %Finger
 @onready var dangling: Node2D = %Dangling
+@onready var animation_player: AnimationPlayer = %AnimationPlayer
 @onready var joint_scene: PackedScene = preload("res://dangling/joint.tscn")
+@onready var blood_scene: PackedScene = preload("res://dangling/blood_drop.tscn")
 
 
 func _ready() -> void:
 	setup_dangling()
+	EventBus.new_dangling.connect(add_dangling)
+	EventBus.pricked.connect(_on_pricked)
 
 
-func setup_dangling() -> void:	
+func add_dangling(body: RigidBody2D) -> void:
+	body.reparent(dangling)
+	setup_dangling()
+
+
+func setup_dangling() -> void:
 	var dangling_children: Array[Node] = dangling.get_children()
 	print("dangling children: ", dangling_children)
 	var current_anchor: RigidBody2D = finger
@@ -18,3 +27,7 @@ func setup_dangling() -> void:
 		joint.join_nodes(current_anchor, child)
 		add_child(joint)
 		current_anchor = child
+		
+func _on_pricked() -> void:
+	animation_player.play("pricked")
+	
