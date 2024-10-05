@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnyp1yfsumkta"]
+
+[ext_resource type="Texture2D" uid="uid://dab4v32px6xxu" path="res://assets/sprites/blood_drop.png" id="1_pk7nb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1wbg5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pk7nb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_virr4"]
+radius = 24.0
+height = 84.0
+
+[node name="Blood drop" type="RigidBody2D"]
+mass = 1000.0
+gravity_scale = 8.0
+angular_damp = 5.633
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_1wbg5")
+animation = &"idle"
+offset = Vector2(4, 44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 45)
+shape = SubResource("CapsuleShape2D_virr4")
+
+[node name="anchor" type="Marker2D" parent="."]
+position = Vector2(6, 88)

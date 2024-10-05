@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://g2egjj0way1e"]
+
+[ext_resource type="Script" path="res://pointer/finger.gd" id="1_48qoe"]
+[ext_resource type="Texture2D" uid="uid://cx84udhkb1ukd" path="res://assets/sprites/finger.png" id="2_ta1g3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5ts1n"]
+radius = 51.0
+height = 140.0
+
+[node name="Finger" type="RigidBody2D"]
+freeze = true
+script = ExtResource("1_48qoe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CapsuleShape2D_5ts1n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ta1g3")
+
+[node name="anchor" type="Marker2D" parent="."]
+position = Vector2(0, 72)
