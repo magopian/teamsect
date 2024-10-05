@@ -24,7 +24,7 @@ EventBus="*res://EventBus.gd"
 
 window/size/viewport_width=2304
 window/size/viewport_height=1296
-window/stretch/aspect="ignore"
+window/stretch/mode="canvas_items"
 
 [layer_names]
 
