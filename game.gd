@@ -7,6 +7,7 @@ extends Node2D
 @onready var blood_scene: PackedScene = preload("res://dangling/blood_drop.tscn")
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 @onready var camera_shaker: Node2D = %CameraShaker
+@onready var win_here: Sprite2D = %WinHere
 
 @export var aie_sounds: Array[AudioStream]
 @export var ahh_sounds: Array[AudioStream]
@@ -39,6 +40,7 @@ func _on_pricked() -> void:
 	audio_stream_player.stream = aie
 	audio_stream_player.play()
 	animation_player.play("pricked")
+	win_here.hide()
 	camera_shaker.apply_shake(10, 5)
 	
 func _on_blood_fixed(_body: RigidBody2D) -> void:
@@ -46,3 +48,4 @@ func _on_blood_fixed(_body: RigidBody2D) -> void:
 	audio_stream_player.stream = ahh
 	audio_stream_player.play()
 	animation_player.play_backwards("pricked")
+	win_here.show()

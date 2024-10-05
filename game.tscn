@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dmvp2b2kh1tqm"]
+[gd_scene load_steps=23 format=3 uid="uid://dmvp2b2kh1tqm"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_8mif2"]
 [ext_resource type="PackedScene" uid="uid://g2egjj0way1e" path="res://pointer/finger.tscn" id="1_xqm73"]
@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://bvjqwxc08vfo2" path="res://assets/sounds/ahh5.wav" id="12_g3h8h"]
 [ext_resource type="AudioStream" uid="uid://bayvfu26k3q7y" path="res://assets/sounds/ahh6.wav" id="13_qoikm"]
 [ext_resource type="PackedScene" uid="uid://cjvlbipxsf1ct" path="res://shaker.tscn" id="18_mygyj"]
+[ext_resource type="PackedScene" uid="uid://ba8uoqwjxbr5i" path="res://finish/win_here.tscn" id="19_adqx3"]
 
 [sub_resource type="Animation" id="Animation_5r065"]
 length = 0.001
@@ -107,6 +108,10 @@ _data = {
 script = ExtResource("1_8mif2")
 aie_sounds = Array[AudioStream]([ExtResource("5_c86kp"), ExtResource("3_ck6k0"), ExtResource("4_aq12f"), ExtResource("5_3hjvq"), ExtResource("6_vffpu"), ExtResource("7_uo284")])
 ahh_sounds = Array[AudioStream]([ExtResource("8_id1fx"), ExtResource("9_y0xir"), ExtResource("10_tloa7"), ExtResource("11_e06no"), ExtResource("12_g3h8h"), ExtResource("13_qoikm")])
+
+[node name="WinHere" parent="." instance=ExtResource("19_adqx3")]
+unique_name_in_owner = true
+position = Vector2(1137, 1081)
 
 [node name="Bandaid" parent="." instance=ExtResource("11_5r8g6")]
 position = Vector2(2012, 461)
