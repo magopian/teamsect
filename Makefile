@@ -14,10 +14,10 @@ export: update_version git_bump_version export_from_godot
 	cd exports && rm -rf Archive.zip && zip Archive *
 
 upload_to_itch: export
-	../butler-darwin-amd64/butler push exports/Archive.zip magopian/teamsect:html
+	../../butler-darwin-amd64/butler push exports/Archive.zip magopian/teamsect:html
 
 itch_status:
-	../butler-darwin-amd64/butler status magopian/teamsect:html
+	../../butler-darwin-amd64/butler status magopian/teamsect:html
 
 export_to_itch: export upload_to_itch
 	@echo "Version uploaded to itch:" $(DATE)

@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmvp2b2kh1tqm"]
+[gd_scene load_steps=7 format=3 uid="uid://dmvp2b2kh1tqm"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_8mif2"]
 [ext_resource type="PackedScene" uid="uid://g2egjj0way1e" path="res://pointer/finger.tscn" id="1_xqm73"]
 [ext_resource type="PackedScene" uid="uid://cnyp1yfsumkta" path="res://dangling/blood_drop.tscn" id="3_m0gvb"]
+[ext_resource type="PackedScene" uid="uid://b8g2i44cwdtvh" path="res://dangling/mosquito.tscn" id="4_xac2r"]
+[ext_resource type="PackedScene" uid="uid://bhrnso07lrta5" path="res://dangling/spider.tscn" id="5_aeytp"]
+[ext_resource type="PackedScene" uid="uid://yadkjwi1eyn5" path="res://dangling/frog.tscn" id="6_naqcg"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_8mif2")
@@ -16,3 +19,9 @@ unique_name_in_owner = true
 
 [node name="Blood drop" parent="Dangling" instance=ExtResource("3_m0gvb")]
 position = Vector2(552, 343)
+
+[node name="Mosquito" parent="Dangling" instance=ExtResource("4_xac2r")]
+
+[node name="Spider" parent="Dangling" instance=ExtResource("5_aeytp")]
+
+[node name="Frog" parent="Dangling" instance=ExtResource("6_naqcg")]
