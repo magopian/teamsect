@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwk6wx8a5ftlb"]
+
+[ext_resource type="Texture2D" uid="uid://bd7gyp60hjk5v" path="res://assets/sprites/bandaid.png" id="1_4xd3o"]
+[ext_resource type="Script" path="res://finish/bandaid.gd" id="1_6asie"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jl6hk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4xd3o")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rdeli"]
+radius = 28.0
+height = 226.0
+
+[node name="Bandaid" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_6asie")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5, 0)
+sprite_frames = SubResource("SpriteFrames_jl6hk")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_rdeli")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
