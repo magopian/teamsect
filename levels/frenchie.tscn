@@ -1,0 +1,207 @@
+[gd_scene load_steps=32 format=3 uid="uid://dgf40l88l6sem"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_8is7b"]
+[ext_resource type="AudioStream" uid="uid://dvfxgkq1xj52h" path="res://assets/sounds/aie1.wav" id="2_3qkrw"]
+[ext_resource type="AudioStream" uid="uid://b680uu4n7beyo" path="res://assets/sounds/aie2.wav" id="3_8ulol"]
+[ext_resource type="AudioStream" uid="uid://c3rmqsos006vl" path="res://assets/sounds/aie3.wav" id="4_tsnql"]
+[ext_resource type="AudioStream" uid="uid://b6li86k5d0n22" path="res://assets/sounds/aie4.wav" id="5_xoi64"]
+[ext_resource type="AudioStream" uid="uid://ccb512mqllc0m" path="res://assets/sounds/aie5.wav" id="6_w1b14"]
+[ext_resource type="AudioStream" uid="uid://wcegmh6he1mg" path="res://assets/sounds/aie6.wav" id="7_ftckr"]
+[ext_resource type="AudioStream" uid="uid://drxkch6opxgst" path="res://assets/sounds/ahh1.wav" id="8_rccjs"]
+[ext_resource type="AudioStream" uid="uid://dvomgs1nmqmxi" path="res://assets/sounds/ahh2.wav" id="9_ap4jk"]
+[ext_resource type="AudioStream" uid="uid://b4fs17fysf5ro" path="res://assets/sounds/ahh3.wav" id="10_14uij"]
+[ext_resource type="AudioStream" uid="uid://b8drdmnd5e0cg" path="res://assets/sounds/ahh4.wav" id="11_2o5jp"]
+[ext_resource type="AudioStream" uid="uid://bvjqwxc08vfo2" path="res://assets/sounds/ahh5.wav" id="12_brrgh"]
+[ext_resource type="AudioStream" uid="uid://bayvfu26k3q7y" path="res://assets/sounds/ahh6.wav" id="13_s4qny"]
+[ext_resource type="PackedScene" uid="uid://br1hu3flduvp8" path="res://next.tscn" id="14_njbp1"]
+[ext_resource type="PackedScene" uid="uid://ba8uoqwjxbr5i" path="res://finish/win_here.tscn" id="15_xniaf"]
+[ext_resource type="PackedScene" uid="uid://d2e5o1u66fmrk" path="res://pointer/thumbtack.tscn" id="16_vqxw8"]
+[ext_resource type="PackedScene" uid="uid://cyp2hqnu74snb" path="res://dangling/bandaid.tscn" id="17_0ljf2"]
+[ext_resource type="PackedScene" uid="uid://lcrvpfho1mdv" path="res://dangling/mosquito.tscn" id="18_h2sxd"]
+[ext_resource type="PackedScene" uid="uid://brka63tjsoh1i" path="res://dangling/arm.tscn" id="19_06tcv"]
+[ext_resource type="PackedScene" uid="uid://bhrnso07lrta5" path="res://dangling/spider.tscn" id="20_0f8ik"]
+[ext_resource type="PackedScene" uid="uid://caeeogw7egn20" path="res://dangling/web.tscn" id="21_7vvgg"]
+[ext_resource type="PackedScene" uid="uid://dcptxrwfwct6j" path="res://dangling/frog.tscn" id="22_0l1eb"]
+[ext_resource type="PackedScene" uid="uid://sec7f4n8sa3u" path="res://dangling/lilypad.tscn" id="23_qt60d"]
+[ext_resource type="PackedScene" uid="uid://g2egjj0way1e" path="res://pointer/finger.tscn" id="23_vrts1"]
+[ext_resource type="PackedScene" uid="uid://dwe0atxwtwuw7" path="res://dangling/frenchie.tscn" id="24_ts2hh"]
+[ext_resource type="PackedScene" uid="uid://cnyp1yfsumkta" path="res://dangling/blood_drop.tscn" id="24_vadti"]
+[ext_resource type="PackedScene" uid="uid://cjvlbipxsf1ct" path="res://shaker.tscn" id="25_2hek0"]
+[ext_resource type="PackedScene" uid="uid://bpk6lfxvd4ot7" path="res://dangling/wine.tscn" id="25_fjdph"]
+
+[sub_resource type="Animation" id="Animation_ydm44"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dangling/Blood drop:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dangling/Blood drop:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Dangling/Blood drop:collision_layer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_4stot"]
+resource_name = "pricked"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dangling/Blood drop:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dangling/Blood drop:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 0.133333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Dangling/Blood drop:collision_layer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nvj57"]
+_data = {
+"RESET": SubResource("Animation_ydm44"),
+"pricked": SubResource("Animation_4stot")
+}
+
+[node name="Level Spider" type="Node2D"]
+script = ExtResource("1_8is7b")
+aie_sounds = Array[AudioStream]([ExtResource("2_3qkrw"), ExtResource("3_8ulol"), ExtResource("4_tsnql"), ExtResource("5_xoi64"), ExtResource("6_w1b14"), ExtResource("7_ftckr")])
+ahh_sounds = Array[AudioStream]([ExtResource("8_rccjs"), ExtResource("9_ap4jk"), ExtResource("10_14uij"), ExtResource("11_2o5jp"), ExtResource("12_brrgh"), ExtResource("13_s4qny")])
+
+[node name="Next" parent="." instance=ExtResource("14_njbp1")]
+unique_name_in_owner = true
+visible = false
+position = Vector2(987, 105)
+
+[node name="WinHere" parent="." instance=ExtResource("15_xniaf")]
+unique_name_in_owner = true
+position = Vector2(1137, 1081)
+
+[node name="Thumbtack" parent="." instance=ExtResource("16_vqxw8")]
+unique_name_in_owner = true
+position = Vector2(1135, 1072)
+
+[node name="Bandaid" parent="." node_paths=PackedStringArray("next_target", "accepts") instance=ExtResource("17_0ljf2")]
+unique_name_in_owner = true
+position = Vector2(1802, 462)
+next_target = NodePath("../Mosquito")
+accepts = NodePath("../Dangling/Blood drop")
+
+[node name="Mosquito" parent="." node_paths=PackedStringArray("next_target", "accepts") instance=ExtResource("18_h2sxd")]
+position = Vector2(773, 556)
+next_target = NodePath("../Arm")
+accepts = NodePath("../Bandaid")
+
+[node name="Arm" parent="." node_paths=PackedStringArray("next_target", "accepts") instance=ExtResource("19_06tcv")]
+position = Vector2(2000, 1018)
+next_target = NodePath("../Spider")
+accepts = NodePath("../Mosquito")
+
+[node name="Spider" parent="." node_paths=PackedStringArray("next_target", "accepts") instance=ExtResource("20_0f8ik")]
+position = Vector2(716, 954)
+next_target = NodePath("../Web")
+accepts = NodePath("../Arm")
+
+[node name="Web" parent="." node_paths=PackedStringArray("next_target", "accepts") instance=ExtResource("21_7vvgg")]
+position = Vector2(272, 910)
+next_target = NodePath("../Frog")
+accepts = NodePath("../Spider")
+
+[node name="Frog" parent="." node_paths=PackedStringArray("next_target", "accepts") instance=ExtResource("22_0l1eb")]
+position = Vector2(1728, 1150)
+next_target = NodePath("../Lilypad")
+accepts = NodePath("../Web")
+
+[node name="Lilypad" parent="." node_paths=PackedStringArray("next_target", "accepts") instance=ExtResource("23_qt60d")]
+position = Vector2(478, 1134)
+next_target = NodePath("../Frenchie")
+accepts = NodePath("../Frog")
+
+[node name="Frenchie" parent="." node_paths=PackedStringArray("next_target", "accepts") instance=ExtResource("24_ts2hh")]
+position = Vector2(1950, 270)
+next_target = NodePath("../Wine")
+accepts = NodePath("../Lilypad")
+
+[node name="Wine" parent="." node_paths=PackedStringArray("accepts") instance=ExtResource("25_fjdph")]
+position = Vector2(178, 132)
+accepts = NodePath("../Frenchie")
+
+[node name="Finger" parent="." instance=ExtResource("23_vrts1")]
+unique_name_in_owner = true
+position = Vector2(1146, 528)
+
+[node name="Dangling" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Blood drop" parent="Dangling" instance=ExtResource("24_vadti")]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(1e-05, 1e-05)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="CameraShaker" parent="Camera2D" instance=ExtResource("25_2hek0")]
+unique_name_in_owner = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_nvj57")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+bus = &"SFX"

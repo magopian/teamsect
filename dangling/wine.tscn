@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpk6lfxvd4ot7"]
+
+[ext_resource type="PackedScene" uid="uid://dpj6u1auvkvf0" path="res://dangling/_dangling.tscn" id="1_is040"]
+[ext_resource type="PackedScene" uid="uid://ba8uoqwjxbr5i" path="res://finish/win_here.tscn" id="2_fybfg"]
+[ext_resource type="Texture2D" uid="uid://bi0krnq57k86h" path="res://assets/sprites/wine.png" id="3_td7ea"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eruod"]
+radius = 22.0
+height = 128.0
+
+[node name="Wine" instance=ExtResource("1_is040")]
+collision_layer = 1024
+collision_mask = 512
+
+[node name="Wine" type="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 65)
+shape = SubResource("CapsuleShape2D_eruod")
+
+[node name="WinHere" parent="." index="1" instance=ExtResource("2_fybfg")]
+unique_name_in_owner = true
+position = Vector2(0, 65)
+scale = Vector2(1.25, 1.25)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="2"]
+position = Vector2(0, 62)
+texture = ExtResource("3_td7ea")
+
+[node name="anchor" type="Marker2D" parent="." index="3"]
+position = Vector2(0, 131)

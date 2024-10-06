@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://sec7f4n8sa3u"]
+
+[ext_resource type="PackedScene" uid="uid://dpj6u1auvkvf0" path="res://dangling/_dangling.tscn" id="1_j4veh"]
+[ext_resource type="PackedScene" uid="uid://ba8uoqwjxbr5i" path="res://finish/win_here.tscn" id="2_ratww"]
+[ext_resource type="Texture2D" uid="uid://bkveegb3oi2bp" path="res://assets/sprites/lilypad.png" id="3_qxjde"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3f08j"]
+radius = 35.0
+height = 70.0
+
+[node name="Lilypad" instance=ExtResource("1_j4veh")]
+collision_layer = 256
+collision_mask = 128
+
+[node name="Lilypad" type="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 37)
+shape = SubResource("CapsuleShape2D_3f08j")
+
+[node name="WinHere" parent="." index="1" instance=ExtResource("2_ratww")]
+unique_name_in_owner = true
+position = Vector2(7.62939e-06, 37)
+rotation = 1.5708
+scale = Vector2(0.89086, 0.89086)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="2"]
+position = Vector2(0, 37)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_qxjde")
+
+[node name="anchor" type="Marker2D" parent="." index="3"]
+position = Vector2(0, 74)

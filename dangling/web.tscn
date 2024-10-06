@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://caeeogw7egn20"]
+[gd_scene load_steps=5 format=3 uid="uid://caeeogw7egn20"]
 
 [ext_resource type="PackedScene" uid="uid://dpj6u1auvkvf0" path="res://dangling/_dangling.tscn" id="1_uqj8l"]
 [ext_resource type="PackedScene" uid="uid://ba8uoqwjxbr5i" path="res://finish/win_here.tscn" id="2_rmo67"]
@@ -7,52 +7,6 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kdlm4"]
 radius = 61.0
 height = 122.0
-
-[sub_resource type="Animation" id="Animation_dxhhw"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PointLight2D:energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_b61js"]
-resource_name = "glow"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PointLight2D:energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.5, 0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fs0tf"]
-_data = {
-"RESET": SubResource("Animation_dxhhw"),
-"glow": SubResource("Animation_b61js")
-}
-
-[sub_resource type="Gradient" id="Gradient_b7t5r"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_8h16b"]
-gradient = SubResource("Gradient_b7t5r")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
 
 [node name="Web" instance=ExtResource("1_uqj8l")]
 collision_layer = 64
@@ -74,19 +28,5 @@ position = Vector2(0, 66)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_6xh6s")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
-unique_name_in_owner = true
-root_node = NodePath("")
-libraries = {
-"": SubResource("AnimationLibrary_fs0tf")
-}
-
-[node name="PointLight2D" type="PointLight2D" parent="." index="4"]
-position = Vector2(0, 68)
-rotation = 1.5708
-scale = Vector2(4.51389, 4.47531)
-energy = 0.0
-texture = SubResource("GradientTexture2D_8h16b")
-
-[node name="anchor" type="Marker2D" parent="." index="5"]
+[node name="anchor" type="Marker2D" parent="." index="3"]
 position = Vector2(0, 136)
