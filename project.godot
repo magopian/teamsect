@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="TeamSect"
+config/name="The Great Dangling"
 config/version="2024-10-06 21:16"
 run/main_scene="res://levels/blood_drop.tscn"
 config/features=PackedStringArray("4.3", "Mobile")

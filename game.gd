@@ -50,7 +50,7 @@ func _on_pricked() -> void:
 	camera_shaker.apply_shake(10, 5)
 	bandaid.current_target = true
 	
-func _on_target_reached(target: RigidBody2D, body: RigidBody2D) -> void:
+func _on_target_reached(target: RigidBody2D, _body: RigidBody2D) -> void:
 	var ahh: AudioStream = ahh_sounds.pick_random()
 	audio_stream_player.stream = ahh
 	audio_stream_player.play()
