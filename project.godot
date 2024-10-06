@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TeamSect"
-config/version="2024-10-06 12:25"
+config/version="2024-10-06 16:49"
 run/main_scene="res://levels/blood_drop.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://assets/icon.svg"
