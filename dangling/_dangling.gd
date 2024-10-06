@@ -1,7 +1,7 @@
-extends RigidBody2D
+class_name Dangling extends RigidBody2D
 
-@onready var animation_player: AnimationPlayer
-@onready var win_here: Sprite2D
+@onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var win_here: Sprite2D = %WinHere
 @onready var child: CollisionShape2D
 
 @export var next_target: RigidBody2D
@@ -9,15 +9,12 @@ extends RigidBody2D
 @export var accepts: RigidBody2D
 
 func _ready() -> void:
-	print("children: ", get_children())
-	child = get_child(0)
-	print("child: ", child)
-	animation_player = child.find_child("AnimationPlayer")
-	win_here = child.find_child("WinHere")
 	body_entered.connect(_on_body_entered)
 	
 
 func _process(_delta: float) -> void:
+	if not is_inside_tree():
+		return
 	win_here.visible = current_target
 	if current_target:
 		animation_player.play("glow")
@@ -26,6 +23,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
+	print("body entered: ", body)
 	if body == accepts:
 		collision_mask = 0
 		set_deferred("contact_monitor", false)

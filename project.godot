@@ -38,10 +38,15 @@ restart={
 
 2d_physics/layer_1="Finger"
 2d_physics/layer_2="Blood"
-2d_physics/layer_3="Mosquito"
-2d_physics/layer_4="Spider"
-2d_physics/layer_5="Frog"
-2d_physics/layer_6="Thumbtack"
+2d_physics/layer_3="Bandaid"
+2d_physics/layer_4="Mosquito"
+2d_physics/layer_5="Arm"
+2d_physics/layer_6="Spider"
+2d_physics/layer_7="Web"
+2d_physics/layer_8="Frog"
+2d_physics/layer_9="Lillypad"
+2d_physics/layer_10="Frenchie"
+2d_physics/layer_11="Wine"
 
 [rendering]
 

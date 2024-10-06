@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://dpj6u1auvkvf0"]
 
-[ext_resource type="Script" path="res://dangling/target.gd" id="1_ojmnk"]
+[ext_resource type="Script" path="res://dangling/_dangling.gd" id="1_lknsn"]
 
-[node name="Target" type="RigidBody2D"]
+[node name="Dangling" type="RigidBody2D"]
 collision_layer = 0
 collision_mask = 0
 mass = 1000.0
@@ -10,4 +10,4 @@ gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 10
 angular_damp = 5.633
-script = ExtResource("1_ojmnk")
+script = ExtResource("1_lknsn")

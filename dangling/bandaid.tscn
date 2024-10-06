@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://cyp2hqnu74snb"]
+[gd_scene load_steps=11 format=3 uid="uid://cyp2hqnu74snb"]
 
 [ext_resource type="PackedScene" uid="uid://ba8uoqwjxbr5i" path="res://finish/win_here.tscn" id="1_cqv1b"]
+[ext_resource type="PackedScene" uid="uid://dpj6u1auvkvf0" path="res://dangling/_dangling.tscn" id="1_gxjhl"]
 [ext_resource type="Texture2D" uid="uid://bd7gyp60hjk5v" path="res://assets/sprites/bandaid.png" id="2_0erdl"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_th0ek"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eruod"]
 radius = 53.0
 height = 238.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_cb8cy"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_l02t1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -56,40 +57,47 @@ _data = {
 "glow": SubResource("Animation_b61js")
 }
 
-[sub_resource type="Gradient" id="Gradient_b7t5r"]
+[sub_resource type="Gradient" id="Gradient_cdk5m"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_vkh1t"]
-gradient = SubResource("Gradient_b7t5r")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_eirb1"]
+gradient = SubResource("Gradient_cdk5m")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="Bandaid" type="CollisionShape2D"]
-position = Vector2(0, 121)
-shape = SubResource("CapsuleShape2D_th0ek")
+[node name="Bandaid" instance=ExtResource("1_gxjhl")]
+collision_layer = 4
+collision_mask = 2
 
-[node name="WinHere" parent="." instance=ExtResource("1_cqv1b")]
+[node name="Bandaid" type="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 121)
+shape = SubResource("CapsuleShape2D_eruod")
+
+[node name="WinHere" parent="." index="1" instance=ExtResource("1_cqv1b")]
 unique_name_in_owner = true
 visible = false
+position = Vector2(0, 121)
 scale = Vector2(2.66138, 2.66138)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2"]
+position = Vector2(0, 121)
 rotation = 1.5708
-sprite_frames = SubResource("SpriteFrames_cb8cy")
+sprite_frames = SubResource("SpriteFrames_l02t1")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
 unique_name_in_owner = true
 root_node = NodePath("")
 libraries = {
 "": SubResource("AnimationLibrary_fs0tf")
 }
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="PointLight2D" type="PointLight2D" parent="." index="4"]
+position = Vector2(0, 121)
 scale = Vector2(4.51389, 4.47531)
 energy = 0.0
-texture = SubResource("GradientTexture2D_vkh1t")
+texture = SubResource("GradientTexture2D_eirb1")
 
-[node name="anchor" type="Marker2D" parent="."]
-position = Vector2(1.00045, 124)
+[node name="anchor" type="Marker2D" parent="." index="5"]
+position = Vector2(1.00045, 245)
