@@ -19,6 +19,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 EventBus="*res://EventBus.gd"
+Music="*res://music.tscn"
 
 [display]
 

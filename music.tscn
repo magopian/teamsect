@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://boecw8n40mjm2"]
+
+[ext_resource type="AudioStream" uid="uid://cksq3d8f2wm7u" path="res://assets/sounds/Teamsect idée 1 Jazz.mp3" id="1_dsbur"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_dsbur")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
