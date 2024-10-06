@@ -16,7 +16,7 @@ extends Node2D
 
 
 func _ready() -> void:
-	add_dangling(finger, blood_drop)
+	setup_dangling()
 	EventBus.new_dangling.connect(add_dangling)
 	EventBus.pricked.connect(_on_pricked)
 	EventBus.target_reached.connect(_on_blood_fixed)
@@ -24,11 +24,23 @@ func _ready() -> void:
 	EventBus.next.connect(_on_next)
 
 
-func add_dangling(anchor_node: RigidBody2D, dangling_node: RigidBody2D) -> void:
-	var joint: PinJoint2D = joint_scene.instantiate()
-	joint.join_nodes(anchor_node, dangling_node)
-	add_child(joint)
-		
+func add_dangling(dangling_node: RigidBody2D) -> void:
+	dangling_node.call_deferred("reparent", dangling)
+	call_deferred("setup_dangling")
+
+func setup_dangling() -> void:
+	var current_node: RigidBody2D = finger
+	var children: Array[Node] = dangling.get_children()
+	for child in children:
+		dangling.remove_child(child)
+	for child in children:
+		var joint: PinJoint2D = joint_scene.instantiate()
+		dangling.add_child(child)
+		add_child(joint)
+		joint.join_nodes(current_node, child)
+		current_node = child
+
+
 func _on_pricked() -> void:
 	var aie: AudioStream = aie_sounds.pick_random()
 	audio_stream_player.stream = aie

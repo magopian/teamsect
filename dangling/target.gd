@@ -29,7 +29,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body == accepts:
 		collision_mask = 0
 		set_deferred("contact_monitor", false)
-		EventBus.new_dangling.emit(body, self)
+		EventBus.new_dangling.emit(self)
 		set_deferred("gravity_scale", 8)
 		animation_player.play("RESET")
 		win_here.hide()
