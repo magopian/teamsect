@@ -154,7 +154,7 @@ ahh_sounds = Array[AudioStream]([ExtResource("8_2tnh1"), ExtResource("9_o5wda"),
 [node name="Next" parent="." instance=ExtResource("14_pdpr7")]
 unique_name_in_owner = true
 visible = false
-position = Vector2(1849, 1143)
+position = Vector2(985, 109)
 next_scene = ExtResource("15_234kw")
 
 [node name="WinHere" parent="." instance=ExtResource("15_mpby0")]

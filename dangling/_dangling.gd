@@ -31,6 +31,6 @@ func _on_body_entered(body: Node2D) -> void:
 		set_deferred("gravity_scale", 8)
 		animation_player.play("RESET")
 		win_here.hide()
-		EventBus.target_reached.emit(body)
+		EventBus.target_reached.emit(self, body)
 		if not next_target:
 			EventBus.win.emit()

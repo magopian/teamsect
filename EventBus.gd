@@ -3,7 +3,7 @@ extends Node
 
 signal pricked
 signal new_dangling(dangling_node: RigidBody2D)
-signal target_reached(body: RigidBody2D)
+signal target_reached(target: RigidBody2D, body: RigidBody2D)
 signal win
 signal next
 

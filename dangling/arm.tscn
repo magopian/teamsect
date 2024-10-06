@@ -1,0 +1,91 @@
+[gd_scene load_steps=10 format=3 uid="uid://brka63tjsoh1i"]
+
+[ext_resource type="PackedScene" uid="uid://dpj6u1auvkvf0" path="res://dangling/_dangling.tscn" id="1_tm6r3"]
+[ext_resource type="PackedScene" uid="uid://ba8uoqwjxbr5i" path="res://finish/win_here.tscn" id="2_v8t17"]
+[ext_resource type="Texture2D" uid="uid://b6yf3pro1j7q6" path="res://assets/sprites/arm.png" id="3_w5u2e"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qrd15"]
+radius = 15.0
+height = 78.0
+
+[sub_resource type="Animation" id="Animation_dxhhw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_b61js"]
+resource_name = "glow"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.5, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fs0tf"]
+_data = {
+"RESET": SubResource("Animation_dxhhw"),
+"glow": SubResource("Animation_b61js")
+}
+
+[sub_resource type="Gradient" id="Gradient_htbyg"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3ltnb"]
+gradient = SubResource("Gradient_htbyg")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Arm" instance=ExtResource("1_tm6r3")]
+collision_layer = 16
+collision_mask = 8
+
+[node name="Arm" type="CollisionShape2D" parent="." index="0"]
+position = Vector2(-0.12191, 40.6442)
+shape = SubResource("CapsuleShape2D_qrd15")
+
+[node name="WinHere" parent="." index="1" instance=ExtResource("2_v8t17")]
+unique_name_in_owner = true
+position = Vector2(-0.121918, 40.6442)
+rotation = 1.5708
+scale = Vector2(0.745137, 0.745137)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="2"]
+position = Vector2(-0.12191, 40.6442)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_w5u2e")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+unique_name_in_owner = true
+root_node = NodePath("")
+libraries = {
+"": SubResource("AnimationLibrary_fs0tf")
+}
+
+[node name="PointLight2D" type="PointLight2D" parent="." index="4"]
+position = Vector2(-0.12191, 40.6442)
+rotation = 1.5708
+scale = Vector2(2.80137, 2.77743)
+energy = 0.0
+texture = SubResource("GradientTexture2D_3ltnb")
+
+[node name="anchor" type="Marker2D" parent="." index="5"]
+position = Vector2(-0.12191, 82.6442)

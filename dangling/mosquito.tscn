@@ -68,11 +68,11 @@ _data = {
 "glow": SubResource("Animation_b61js")
 }
 
-[sub_resource type="Gradient" id="Gradient_b7t5r"]
+[sub_resource type="Gradient" id="Gradient_htbyg"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_064e5"]
-gradient = SubResource("Gradient_b7t5r")
+gradient = SubResource("Gradient_htbyg")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -87,10 +87,9 @@ shape = SubResource("CapsuleShape2D_hn0xd")
 
 [node name="WinHere" parent="." index="1" instance=ExtResource("2_ardda")]
 unique_name_in_owner = true
-visible = false
 position = Vector2(-67, -4)
 rotation = 1.5708
-scale = Vector2(2.66138, 2.66138)
+scale = Vector2(1.34661, 1.34661)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2"]
 position = Vector2(-67, -10)
@@ -108,7 +107,7 @@ libraries = {
 [node name="PointLight2D" type="PointLight2D" parent="." index="4"]
 position = Vector2(-67, -4)
 rotation = 1.5708
-scale = Vector2(4.51389, 4.47531)
+scale = Vector2(2.80137, 2.77743)
 energy = 0.0
 texture = SubResource("GradientTexture2D_064e5")
 

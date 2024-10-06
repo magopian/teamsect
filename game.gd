@@ -19,7 +19,7 @@ func _ready() -> void:
 	setup_dangling()
 	EventBus.new_dangling.connect(add_dangling)
 	EventBus.pricked.connect(_on_pricked)
-	EventBus.target_reached.connect(_on_blood_fixed)
+	EventBus.target_reached.connect(_on_target_reached)
 	EventBus.win.connect(_on_win)
 	EventBus.next.connect(_on_next)
 
@@ -50,16 +50,18 @@ func _on_pricked() -> void:
 	camera_shaker.apply_shake(10, 5)
 	bandaid.current_target = true
 	
-func _on_blood_fixed(_body: RigidBody2D) -> void:
+func _on_target_reached(target: RigidBody2D, body: RigidBody2D) -> void:
 	var ahh: AudioStream = ahh_sounds.pick_random()
 	audio_stream_player.stream = ahh
 	audio_stream_player.play()
-	win_here.show()
-	bandaid.current_target = false
+	target.current_target = false
+	if target.next_target:
+		target.next_target.current_target = true
 	
 	
 func _on_win() -> void:
-	next.show()
+	if next.next_scene:
+		next.show()
 	
 
 func _on_next() -> void:
