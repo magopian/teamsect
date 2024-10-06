@@ -3,9 +3,7 @@
 [ext_resource type="Script" path="res://dangling/joint.gd" id="1_0dv52"]
 
 [node name="Joint" type="PinJoint2D"]
-position = Vector2(556, 349)
 bias = 0.337
-angular_limit_enabled = true
 angular_limit_lower = -1.5708
 angular_limit_upper = 1.5708
 script = ExtResource("1_0dv52")

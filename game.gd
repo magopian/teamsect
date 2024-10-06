@@ -4,39 +4,30 @@ extends Node2D
 @onready var dangling: Node2D = %Dangling
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 @onready var joint_scene: PackedScene = preload("res://dangling/joint.tscn")
-@onready var blood_scene: PackedScene = preload("res://dangling/blood_drop.tscn")
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 @onready var camera_shaker: Node2D = %CameraShaker
 @onready var win_here: Sprite2D = %WinHere
 @onready var next: Node2D = %Next
+@onready var bandaid: RigidBody2D = %Bandaid
+@onready var blood_drop: RigidBody2D = %"Blood drop"
 
 @export var aie_sounds: Array[AudioStream]
 @export var ahh_sounds: Array[AudioStream]
 
 
 func _ready() -> void:
-	setup_dangling()
+	add_dangling(finger, blood_drop)
 	EventBus.new_dangling.connect(add_dangling)
 	EventBus.pricked.connect(_on_pricked)
-	EventBus.blood_fixed.connect(_on_blood_fixed)
+	EventBus.target_reached.connect(_on_blood_fixed)
 	EventBus.win.connect(_on_win)
 	EventBus.next.connect(_on_next)
 
 
-func add_dangling(body: RigidBody2D) -> void:
-	body.reparent(dangling)
-	setup_dangling()
-
-
-func setup_dangling() -> void:
-	var dangling_children: Array[Node] = dangling.get_children()
-	print("dangling children: ", dangling_children)
-	var current_anchor: RigidBody2D = finger
-	for child in dangling_children:
-		var joint: PinJoint2D = joint_scene.instantiate()
-		joint.join_nodes(current_anchor, child)
-		add_child(joint)
-		current_anchor = child
+func add_dangling(anchor_node: RigidBody2D, dangling_node: RigidBody2D) -> void:
+	var joint: PinJoint2D = joint_scene.instantiate()
+	joint.join_nodes(anchor_node, dangling_node)
+	add_child(joint)
 		
 func _on_pricked() -> void:
 	var aie: AudioStream = aie_sounds.pick_random()
@@ -45,13 +36,14 @@ func _on_pricked() -> void:
 	animation_player.play("pricked")
 	win_here.hide()
 	camera_shaker.apply_shake(10, 5)
+	bandaid.current_target = true
 	
 func _on_blood_fixed(_body: RigidBody2D) -> void:
 	var ahh: AudioStream = ahh_sounds.pick_random()
 	audio_stream_player.stream = ahh
 	audio_stream_player.play()
-	animation_player.play_backwards("pricked")
 	win_here.show()
+	bandaid.current_target = false
 	
 	
 func _on_win() -> void:

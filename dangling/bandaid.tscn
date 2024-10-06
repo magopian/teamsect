@@ -1,23 +1,22 @@
-[gd_scene load_steps=11 format=3 uid="uid://dwk6wx8a5ftlb"]
+[gd_scene load_steps=10 format=3 uid="uid://cyp2hqnu74snb"]
 
-[ext_resource type="Texture2D" uid="uid://bd7gyp60hjk5v" path="res://assets/sprites/bandaid.png" id="1_4xd3o"]
-[ext_resource type="Script" path="res://finish/bandaid.gd" id="1_6asie"]
-[ext_resource type="PackedScene" uid="uid://ba8uoqwjxbr5i" path="res://finish/win_here.tscn" id="3_67lfy"]
+[ext_resource type="PackedScene" uid="uid://ba8uoqwjxbr5i" path="res://finish/win_here.tscn" id="1_cqv1b"]
+[ext_resource type="Texture2D" uid="uid://bd7gyp60hjk5v" path="res://assets/sprites/bandaid.png" id="2_0erdl"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_jl6hk"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_th0ek"]
+radius = 53.0
+height = 238.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cb8cy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_4xd3o")
+"texture": ExtResource("2_0erdl")
 }],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rdeli"]
-radius = 50.0
-height = 236.0
 
 [sub_resource type="Animation" id="Animation_dxhhw"]
 length = 0.001
@@ -57,35 +56,32 @@ _data = {
 "glow": SubResource("Animation_b61js")
 }
 
-[sub_resource type="Gradient" id="Gradient_ohkl7"]
+[sub_resource type="Gradient" id="Gradient_b7t5r"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_67fxr"]
-gradient = SubResource("Gradient_ohkl7")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vkh1t"]
+gradient = SubResource("Gradient_b7t5r")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="Bandaid" type="Area2D"]
-collision_layer = 0
-collision_mask = 2
-script = ExtResource("1_6asie")
+[node name="Bandaid" type="CollisionShape2D"]
+position = Vector2(0, 121)
+shape = SubResource("CapsuleShape2D_th0ek")
 
-[node name="WinHere" parent="." instance=ExtResource("3_67lfy")]
+[node name="WinHere" parent="." instance=ExtResource("1_cqv1b")]
 unique_name_in_owner = true
 visible = false
 scale = Vector2(2.66138, 2.66138)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_jl6hk")
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_cb8cy")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_rdeli")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
+root_node = NodePath("")
 libraries = {
 "": SubResource("AnimationLibrary_fs0tf")
 }
@@ -93,6 +89,7 @@ libraries = {
 [node name="PointLight2D" type="PointLight2D" parent="."]
 scale = Vector2(4.51389, 4.47531)
 energy = 0.0
-texture = SubResource("GradientTexture2D_67fxr")
+texture = SubResource("GradientTexture2D_vkh1t")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="anchor" type="Marker2D" parent="."]
+position = Vector2(1.00045, 124)

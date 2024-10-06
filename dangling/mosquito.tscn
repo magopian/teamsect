@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8g2i44cwdtvh"]
+[gd_scene load_steps=6 format=3 uid="uid://b8g2i44cwdtvh"]
 
 [ext_resource type="Texture2D" uid="uid://c4fun22bbs8cw" path="res://assets/sprites/mosquito.png" id="1_exkln"]
 
@@ -6,11 +6,22 @@
 radius = 34.0
 height = 136.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cyjk"]
+atlas = ExtResource("1_exkln")
+region = Rect2(0, 0, 128, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jk78u"]
+atlas = ExtResource("1_exkln")
+region = Rect2(128, 0, 128, 125)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_pcw6m"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_exkln")
+"texture": SubResource("AtlasTexture_1cyjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jk78u")
 }],
 "loop": true,
 "name": &"idle",
@@ -33,6 +44,8 @@ shape = SubResource("CapsuleShape2D_yre3c")
 position = Vector2(-67, -10)
 sprite_frames = SubResource("SpriteFrames_pcw6m")
 animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.249129
 
 [node name="anchor" type="Marker2D" parent="."]
 position = Vector2(-136, -4)
