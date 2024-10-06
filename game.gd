@@ -42,6 +42,8 @@ func setup_dangling() -> void:
 
 
 func _on_pricked() -> void:
+	if dangling.get_children().size() > 1:
+		get_tree().reload_current_scene()
 	var aie: AudioStream = aie_sounds.pick_random()
 	audio_stream_player.stream = aie
 	audio_stream_player.play()
