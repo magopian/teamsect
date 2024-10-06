@@ -16,14 +16,20 @@ offset_bottom = -5.00001
 scale = Vector2(2.5, 2.5)
 texture_normal = ExtResource("2_jerru")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="RichTextLabel" parent="."]
 offset_left = 106.0
 offset_top = -64.0
-offset_right = 339.0
+offset_right = 370.0
 offset_bottom = 62.0
+mouse_filter = 2
 theme_override_constants/outline_size = 15
-theme_override_font_sizes/font_size = 92
-text = "NEXT"
+theme_override_font_sizes/bold_italics_font_size = 92
+theme_override_font_sizes/italics_font_size = 92
+theme_override_font_sizes/mono_font_size = 92
+theme_override_font_sizes/normal_font_size = 92
+theme_override_font_sizes/bold_font_size = 92
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1]NEXT[/wave]"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_p8jan")
