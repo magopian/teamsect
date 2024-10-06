@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmvp2b2kh1tqm"]
+[gd_scene load_steps=7 format=3 uid="uid://dmvp2b2kh1tqm"]
 
 [ext_resource type="Script" path="res://start_menu.gd" id="1_cyv5k"]
+[ext_resource type="PackedScene" uid="uid://bv3c4q2qx0kgk" path="res://background_pattern.tscn" id="2_qq0qr"]
 [ext_resource type="PackedScene" uid="uid://g2egjj0way1e" path="res://pointer/finger.tscn" id="5_6o7i7"]
 [ext_resource type="Texture2D" uid="uid://dwbrtdgek761u" path="res://assets/sprites/start_menu.png" id="14_tfhaf"]
 [ext_resource type="Texture2D" uid="uid://cjcgxgmmy0vw6" path="res://assets/sprites/button.png" id="15_3sdbn"]
@@ -8,6 +9,8 @@
 
 [node name="Start Menu" type="Node2D"]
 script = ExtResource("1_cyv5k")
+
+[node name="CanvasLayer2" parent="." instance=ExtResource("2_qq0qr")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://chg521wjvg5vg"]
+[gd_scene load_steps=30 format=3 uid="uid://chg521wjvg5vg"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_6ibpj"]
 [ext_resource type="AudioStream" uid="uid://dvfxgkq1xj52h" path="res://assets/sounds/aie1.wav" id="2_ud3ok"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://bvjqwxc08vfo2" path="res://assets/sounds/ahh5.wav" id="12_aoki0"]
 [ext_resource type="AudioStream" uid="uid://bayvfu26k3q7y" path="res://assets/sounds/ahh6.wav" id="13_x3atk"]
 [ext_resource type="PackedScene" uid="uid://br1hu3flduvp8" path="res://next.tscn" id="14_qp2b6"]
+[ext_resource type="PackedScene" uid="uid://bv3c4q2qx0kgk" path="res://background_pattern.tscn" id="14_sj4se"]
 [ext_resource type="PackedScene" uid="uid://ba8uoqwjxbr5i" path="res://finish/win_here.tscn" id="15_gooji"]
 [ext_resource type="PackedScene" uid="uid://3ycxpvktvhne" path="res://levels/frog.tscn" id="15_ro78d"]
 [ext_resource type="PackedScene" uid="uid://d2e5o1u66fmrk" path="res://pointer/thumbtack.tscn" id="16_hvull"]
@@ -114,6 +115,8 @@ _data = {
 script = ExtResource("1_6ibpj")
 aie_sounds = Array[AudioStream]([ExtResource("2_ud3ok"), ExtResource("3_bpyst"), ExtResource("4_nf8uu"), ExtResource("5_gei6f"), ExtResource("6_44djb"), ExtResource("7_1ukuv")])
 ahh_sounds = Array[AudioStream]([ExtResource("8_l5tjm"), ExtResource("9_mrcf4"), ExtResource("10_0aw7c"), ExtResource("11_lj0hp"), ExtResource("12_aoki0"), ExtResource("13_x3atk")])
+
+[node name="BackgroundPattern" parent="." instance=ExtResource("14_sj4se")]
 
 [node name="Next" parent="." instance=ExtResource("14_qp2b6")]
 unique_name_in_owner = true
