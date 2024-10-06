@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Teamsect idée 1 Jazz.mp3-483639b5f9ae6d8e050
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
