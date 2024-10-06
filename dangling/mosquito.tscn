@@ -1,8 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://lcrvpfho1mdv"]
+[gd_scene load_steps=14 format=3 uid="uid://lcrvpfho1mdv"]
 
 [ext_resource type="PackedScene" uid="uid://dpj6u1auvkvf0" path="res://dangling/_dangling.tscn" id="1_ay1mw"]
 [ext_resource type="PackedScene" uid="uid://ba8uoqwjxbr5i" path="res://finish/win_here.tscn" id="2_ardda"]
+[ext_resource type="AudioStream" uid="uid://blv15hql867v2" path="res://assets/sounds/mosquito1.wav" id="2_lrjt3"]
+[ext_resource type="AudioStream" uid="uid://dnhsrlqamf67p" path="res://assets/sounds/mosquito2.wav" id="3_ns02w"]
 [ext_resource type="Texture2D" uid="uid://c4fun22bbs8cw" path="res://assets/sprites/mosquito.png" id="3_vhp2n"]
+[ext_resource type="AudioStream" uid="uid://cykos2lidmh15" path="res://assets/sounds/mosquito3.wav" id="4_8g6l2"]
+[ext_resource type="AudioStream" uid="uid://bnaovh1tl1q2t" path="res://assets/sounds/mosquito4.wav" id="5_hsc1t"]
+[ext_resource type="AudioStream" uid="uid://nswekt7n67y7" path="res://assets/sounds/mosquito5.wav" id="6_x8u8q"]
+[ext_resource type="AudioStream" uid="uid://b1p01v4bn8vx1" path="res://assets/sounds/mosquito6.wav" id="7_36r6f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hn0xd"]
 radius = 34.0
@@ -33,6 +39,7 @@ animations = [{
 [node name="Mosquito" instance=ExtResource("1_ay1mw")]
 collision_layer = 8
 collision_mask = 4
+ahh_sounds = Array[AudioStream]([ExtResource("2_lrjt3"), ExtResource("3_ns02w"), ExtResource("4_8g6l2"), ExtResource("5_hsc1t"), ExtResource("6_x8u8q"), ExtResource("7_36r6f")])
 
 [node name="Mosquito" type="CollisionShape2D" parent="." index="0"]
 position = Vector2(-67, -4)

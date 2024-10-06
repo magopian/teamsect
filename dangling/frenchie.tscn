@@ -1,8 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwe0atxwtwuw7"]
+[gd_scene load_steps=15 format=3 uid="uid://dwe0atxwtwuw7"]
 
 [ext_resource type="PackedScene" uid="uid://dpj6u1auvkvf0" path="res://dangling/_dangling.tscn" id="1_ra1v2"]
+[ext_resource type="AudioStream" uid="uid://srt0e4beqe4k" path="res://assets/sounds/frenchie1.wav" id="2_iv17a"]
 [ext_resource type="PackedScene" uid="uid://ba8uoqwjxbr5i" path="res://finish/win_here.tscn" id="2_tcc3h"]
 [ext_resource type="Texture2D" uid="uid://c1unn1xwygyb3" path="res://assets/sprites/frenchie.png" id="3_l8in2"]
+[ext_resource type="AudioStream" uid="uid://cslkyabrud5qd" path="res://assets/sounds/frenchie2.wav" id="3_vpb5l"]
+[ext_resource type="AudioStream" uid="uid://c01e6dilp82jy" path="res://assets/sounds/frenchie3.wav" id="4_mlbfr"]
+[ext_resource type="AudioStream" uid="uid://dkca3fomqcuxm" path="res://assets/sounds/frenchie4.wav" id="5_0j43l"]
+[ext_resource type="AudioStream" uid="uid://dj7a3nrfxia12" path="res://assets/sounds/frenchie5.wav" id="6_cr0lu"]
+[ext_resource type="AudioStream" uid="uid://cs8mbrjgqclnn" path="res://assets/sounds/frenchie6.wav" id="7_og8ru"]
+[ext_resource type="AudioStream" uid="uid://dgyjqh23kgq18" path="res://assets/sounds/frenchie7.wav" id="8_s1nkm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3f08j"]
 radius = 34.0
@@ -33,6 +40,7 @@ animations = [{
 [node name="Frenchie" instance=ExtResource("1_ra1v2")]
 collision_layer = 512
 collision_mask = 256
+ahh_sounds = Array[AudioStream]([ExtResource("2_iv17a"), ExtResource("3_vpb5l"), ExtResource("4_mlbfr"), ExtResource("5_0j43l"), ExtResource("6_cr0lu"), ExtResource("7_og8ru"), ExtResource("8_s1nkm")])
 
 [node name="Frenchie" type="CollisionShape2D" parent="." index="0"]
 position = Vector2(0, 72)

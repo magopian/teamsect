@@ -11,3 +11,6 @@ contact_monitor = true
 max_contacts_reported = 10
 angular_damp = 5.633
 script = ExtResource("1_lknsn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true

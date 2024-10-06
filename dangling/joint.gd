@@ -2,7 +2,6 @@ extends PinJoint2D
 
 
 func join_nodes(anchor_node: RigidBody2D, dangling_node: RigidBody2D) -> void:
-	print("joining nodes ", anchor_node, " ", dangling_node)
 	anchor_node.global_rotation = 0
 	var anchor_position = get_anchor_position(anchor_node)
 	dangling_node.global_rotation = 0
