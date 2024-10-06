@@ -8,6 +8,7 @@ extends Node2D
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 @onready var camera_shaker: Node2D = %CameraShaker
 @onready var win_here: Sprite2D = %WinHere
+@onready var next: Node2D = %Next
 
 @export var aie_sounds: Array[AudioStream]
 @export var ahh_sounds: Array[AudioStream]
@@ -18,6 +19,8 @@ func _ready() -> void:
 	EventBus.new_dangling.connect(add_dangling)
 	EventBus.pricked.connect(_on_pricked)
 	EventBus.blood_fixed.connect(_on_blood_fixed)
+	EventBus.win.connect(_on_win)
+	EventBus.next.connect(_on_next)
 
 
 func add_dangling(body: RigidBody2D) -> void:
@@ -49,3 +52,11 @@ func _on_blood_fixed(_body: RigidBody2D) -> void:
 	audio_stream_player.play()
 	animation_player.play_backwards("pricked")
 	win_here.show()
+	
+	
+func _on_win() -> void:
+	next.show()
+	
+
+func _on_next() -> void:
+	print("next!!")

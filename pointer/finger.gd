@@ -13,7 +13,7 @@ func get_anchor_position() -> Vector2:
 	return anchor.global_position
 
 func _physics_process(_delta: float) -> void:
-	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	var mouse_position: Vector2 = get_global_mouse_position()
 	var viewport_size: Vector2 = get_viewport_rect().size as Vector2
 	mouse_position.x = clamp(mouse_position.x, sprite_size.x / 2, viewport_size.x - (sprite_size.x/2))

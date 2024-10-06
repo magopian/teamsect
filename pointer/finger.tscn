@@ -8,6 +8,7 @@ radius = 51.0
 height = 140.0
 
 [node name="Finger" type="RigidBody2D"]
+position = Vector2(0, -35)
 freeze = true
 freeze_mode = 1
 script = ExtResource("1_48qoe")

@@ -2,6 +2,21 @@
 
 [ext_resource type="Texture2D" uid="uid://dar76tgq0jj1q" path="res://assets/sprites/win_here.png" id="1_wx276"]
 
+[sub_resource type="Animation" id="Animation_c71ti"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_qjc3v"]
 resource_name = "blink"
 length = 2.0
@@ -19,21 +34,6 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0.105543), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_c71ti"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.105543)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_30i8b"]
 _data = {
 "RESET": SubResource("Animation_c71ti"),
@@ -41,7 +41,6 @@ _data = {
 }
 
 [node name="WinHere" type="Sprite2D"]
-modulate = Color(1, 1, 1, 0.105543)
 texture = ExtResource("1_wx276")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

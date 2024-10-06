@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://br1hu3flduvp8"]
+
+[ext_resource type="Texture2D" uid="uid://bnh7dfvyig5jt" path="res://assets/sprites/arrow.png" id="1_p8jan"]
+[ext_resource type="Script" path="res://next.gd" id="1_th0a2"]
+[ext_resource type="Texture2D" uid="uid://cjcgxgmmy0vw6" path="res://assets/sprites/button.png" id="2_jerru"]
+[ext_resource type="PackedScene" uid="uid://db2vr0h3x3j1h" path="res://blinker.tscn" id="2_ourv0"]
+
+[node name="Next" type="Node2D"]
+script = ExtResource("1_th0a2")
+
+[node name="Button" type="TextureButton" parent="."]
+offset_left = -175.0
+offset_top = -107.0
+offset_right = 75.0
+offset_bottom = -5.00001
+scale = Vector2(2.5, 2.5)
+texture_normal = ExtResource("2_jerru")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 106.0
+offset_top = -64.0
+offset_right = 339.0
+offset_bottom = 62.0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 92
+text = "NEXT"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_p8jan")
+
+[node name="Blinker" parent="Sprite2D" instance=ExtResource("2_ourv0")]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
