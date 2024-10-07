@@ -10,6 +10,7 @@ class_name Dangling extends RigidBody2D
 
 
 func _ready() -> void:
+	win_here.hide()
 	body_entered.connect(_on_body_entered)
 	
 

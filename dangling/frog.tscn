@@ -11,8 +11,8 @@
 [ext_resource type="AudioStream" uid="uid://cpx6ntibeht3m" path="res://assets/sounds/frog6.wav" id="7_yrw5e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3f08j"]
-radius = 43.0
-height = 86.0
+radius = 37.9161
+height = 75.8322
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j86rp"]
 atlas = ExtResource("3_a0s5a")
@@ -40,19 +40,23 @@ animations = [{
 collision_layer = 128
 collision_mask = 64
 ahh_sounds = Array[AudioStream]([ExtResource("2_bbwqg"), ExtResource("3_jf12j"), ExtResource("4_0olu1"), ExtResource("5_cx04n"), ExtResource("6_fc1fa"), ExtResource("7_yrw5e")])
+metadata/_edit_vertical_guides_ = [-231.0]
+metadata/_edit_horizontal_guides_ = [122.0]
 
 [node name="Frog" type="CollisionShape2D" parent="." index="0"]
-position = Vector2(-25, 42)
+position = Vector2(-51, 60)
+scale = Vector2(2.16267, 2.32633)
 shape = SubResource("CapsuleShape2D_3f08j")
 
 [node name="WinHere" parent="." index="1" instance=ExtResource("2_ajb5r")]
 unique_name_in_owner = true
-position = Vector2(-25, 43)
+position = Vector2(-51, 60)
 rotation = 1.5708
-scale = Vector2(1.00913, 1.00913)
+scale = Vector2(1.6, 1.6)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2"]
-position = Vector2(-23, -12)
+position = Vector2(-46, -29)
+scale = Vector2(1.73219, 1.73219)
 sprite_frames = SubResource("SpriteFrames_e53ri")
 animation = &"idle"
 autoplay = "idle"
@@ -60,4 +64,4 @@ frame_progress = 0.499584
 offset = Vector2(-2, 64)
 
 [node name="anchor" type="Marker2D" parent="." index="3"]
-position = Vector2(-25, 77)
+position = Vector2(-125, 101)

@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bd7gyp60hjk5v" path="res://assets/sprites/bandaid.png" id="2_0erdl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eruod"]
-radius = 53.0
-height = 238.0
+radius = 27.0
+height = 122.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l02t1"]
 animations = [{
@@ -22,23 +22,26 @@ animations = [{
 [node name="Bandaid" instance=ExtResource("1_gxjhl")]
 collision_layer = 4
 collision_mask = 2
+metadata/_edit_vertical_guides_ = [-359.0]
+metadata/_edit_horizontal_guides_ = [122.0]
 
 [node name="Bandaid" type="CollisionShape2D" parent="." index="0"]
-position = Vector2(0, 121)
+position = Vector2(0, 60)
 shape = SubResource("CapsuleShape2D_eruod")
 
 [node name="WinHere" parent="." index="1" instance=ExtResource("1_cqv1b")]
 unique_name_in_owner = true
 visible = false
-position = Vector2(0, 121)
-scale = Vector2(2.66138, 2.66138)
+position = Vector2(0, 60)
+scale = Vector2(1.6, 1.6)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2"]
-position = Vector2(0, 121)
+position = Vector2(0, 60)
 rotation = 1.5708
+scale = Vector2(0.509552, 0.509552)
 sprite_frames = SubResource("SpriteFrames_l02t1")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="anchor" type="Marker2D" parent="." index="3"]
-position = Vector2(1.00045, 245)
+position = Vector2(0, 120)

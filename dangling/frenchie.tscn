@@ -12,8 +12,8 @@
 [ext_resource type="AudioStream" uid="uid://dgyjqh23kgq18" path="res://assets/sounds/frenchie7.wav" id="8_s1nkm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3f08j"]
-radius = 34.0
-height = 152.0
+radius = 26.0
+height = 124.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c116j"]
 atlas = ExtResource("3_l8in2")
@@ -41,18 +41,22 @@ animations = [{
 collision_layer = 512
 collision_mask = 256
 ahh_sounds = Array[AudioStream]([ExtResource("2_iv17a"), ExtResource("3_vpb5l"), ExtResource("4_mlbfr"), ExtResource("5_0j43l"), ExtResource("6_cr0lu"), ExtResource("7_og8ru"), ExtResource("8_s1nkm")])
+metadata/_edit_vertical_guides_ = [-158.0]
+metadata/_edit_horizontal_guides_ = [121.0]
 
 [node name="Frenchie" type="CollisionShape2D" parent="." index="0"]
-position = Vector2(0, 72)
+position = Vector2(-5, 61)
 shape = SubResource("CapsuleShape2D_3f08j")
 
 [node name="WinHere" parent="." index="1" instance=ExtResource("2_tcc3h")]
 unique_name_in_owner = true
-position = Vector2(7.62939e-06, 72)
+position = Vector2(5.45697e-12, 61)
 rotation = 1.5708
-scale = Vector2(1.44369, 1.44369)
+scale = Vector2(1.6, 1.6)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2"]
+position = Vector2(-1, 2)
+scale = Vector2(0.827312, 0.827312)
 sprite_frames = SubResource("SpriteFrames_e53ri")
 animation = &"idle"
 autoplay = "idle"
@@ -60,4 +64,4 @@ frame_progress = 0.744603
 offset = Vector2(-2, 64)
 
 [node name="anchor" type="Marker2D" parent="." index="3"]
-position = Vector2(0, 148)
+position = Vector2(-21, 120)

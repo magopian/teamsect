@@ -19,19 +19,22 @@ height = 128.0
 collision_layer = 1024
 collision_mask = 512
 ahh_sounds = Array[AudioStream]([ExtResource("2_bl2xc"), ExtResource("3_lcjtv"), ExtResource("4_e776j"), ExtResource("5_hgm4w"), ExtResource("6_jl2cr"), ExtResource("7_tfxal"), ExtResource("8_rwfts")])
+metadata/_edit_vertical_guides_ = [-81.0]
+metadata/_edit_horizontal_guides_ = [122.0]
 
 [node name="Wine" type="CollisionShape2D" parent="." index="0"]
-position = Vector2(0, 65)
+position = Vector2(0, 62)
 shape = SubResource("CapsuleShape2D_eruod")
 
 [node name="WinHere" parent="." index="1" instance=ExtResource("2_fybfg")]
 unique_name_in_owner = true
-position = Vector2(0, 65)
-scale = Vector2(1.25, 1.25)
+position = Vector2(0, 62)
+scale = Vector2(1.6, 1.6)
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="2"]
-position = Vector2(0, 62)
+position = Vector2(0, 60)
+scale = Vector2(1.04537, 1.04537)
 texture = ExtResource("3_td7ea")
 
 [node name="anchor" type="Marker2D" parent="." index="3"]
-position = Vector2(0, 131)
+position = Vector2(0, 121)

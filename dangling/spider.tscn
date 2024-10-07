@@ -40,19 +40,22 @@ animations = [{
 collision_layer = 32
 collision_mask = 16
 ahh_sounds = Array[AudioStream]([ExtResource("2_hrrpo"), ExtResource("3_c6gm1"), ExtResource("4_ei76e"), ExtResource("5_nxsxh"), ExtResource("6_5tlti"), ExtResource("7_1sor6")])
+metadata/_edit_vertical_guides_ = [-313.0]
+metadata/_edit_horizontal_guides_ = [122.0]
 
 [node name="Spider" type="CollisionShape2D" parent="." index="0"]
-position = Vector2(-67, -4)
+position = Vector2(18, 65)
 shape = SubResource("CapsuleShape2D_kdlm4")
 
 [node name="WinHere" parent="." index="1" instance=ExtResource("2_25vp3")]
 unique_name_in_owner = true
-position = Vector2(-67, -4)
+position = Vector2(18, 65)
 rotation = 1.5708
-scale = Vector2(1.67806, 1.67806)
+scale = Vector2(1.6, 1.6)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2"]
-position = Vector2(-67, -10)
+position = Vector2(17, 59)
+scale = Vector2(0.925061, 0.925061)
 sprite_frames = SubResource("SpriteFrames_ulh1e")
 animation = &"idle"
 autoplay = "idle"
@@ -60,4 +63,4 @@ frame = 1
 frame_progress = 0.388015
 
 [node name="anchor" type="Marker2D" parent="." index="3"]
-position = Vector2(-136, -4)
+position = Vector2(54, 119)
