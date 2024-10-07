@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://d4k6rk2r8n3pg"]
+[gd_scene load_steps=8 format=3 uid="uid://d4k6rk2r8n3pg"]
 
 [ext_resource type="Script" path="res://obstacles/spikes.gd" id="1_kb4og"]
 [ext_resource type="Texture2D" uid="uid://bpc87nnsthne" path="res://assets/sprites/spikes.png" id="2_tyyex"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_14h7l"]
-radius = 47.0
+radius = 38.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ayaux"]
+radius = 52.0096
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qk4j4"]
 atlas = ExtResource("2_tyyex")
@@ -28,18 +31,24 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="SPIKES" type="Area2D" groups=["spikes"]]
-collision_layer = 0
+[node name="SPIKES" type="StaticBody2D" groups=["spikes"]]
+collision_layer = 36623
 collision_mask = 2048
 script = ExtResource("1_kb4og")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_14h7l")
 
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 1807
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ayaux")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5lt6h")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.266405
+frame_progress = 0.944453
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
