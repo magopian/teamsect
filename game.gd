@@ -90,6 +90,7 @@ func _on_win() -> void:
 		next.show()
 	else:
 		you_win.show()
+		Music.play_win()
 
 
 func _on_reload_button_pressed() -> void:
