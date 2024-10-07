@@ -17,10 +17,10 @@ scale = Vector2(2.5, 2.5)
 texture_normal = ExtResource("2_jerru")
 
 [node name="Label" type="RichTextLabel" parent="."]
-offset_left = 106.0
-offset_top = -64.0
-offset_right = 422.0
-offset_bottom = 62.0
+offset_left = 47.0
+offset_top = -65.0
+offset_right = 411.0
+offset_bottom = 61.0
 mouse_filter = 2
 theme_override_constants/outline_size = 15
 theme_override_font_sizes/bold_italics_font_size = 92
@@ -29,9 +29,10 @@ theme_override_font_sizes/mono_font_size = 92
 theme_override_font_sizes/normal_font_size = 92
 theme_override_font_sizes/bold_font_size = 92
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]NEXT[/wave]"
+text = "[center][wave amp=50.0 freq=5.0 connected=1]NEXT[/wave][/center]"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-38, -1)
 texture = ExtResource("1_p8jan")
 
 [node name="Blinker" parent="Sprite2D" instance=ExtResource("2_ourv0")]

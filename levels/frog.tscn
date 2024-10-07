@@ -12,7 +12,7 @@
 
 [node name="Level Frog" instance=ExtResource("1_pbtj8")]
 
-[node name="Next" parent="." index="1"]
+[node name="Next" parent="." index="2"]
 next_scene = ExtResource("2_0y5bm")
 
 [node name="Rock" parent="Obstacles" index="0" instance=ExtResource("2_0jbnv")]

@@ -14,7 +14,7 @@
 
 [node name="Level Frenchie" instance=ExtResource("1_ydsfr")]
 
-[node name="Next" parent="." index="1"]
+[node name="Next" parent="." index="2"]
 next_scene = ExtResource("2_f1ehw")
 
 [node name="Rock" parent="Obstacles" index="0" instance=ExtResource("2_iaghe")]

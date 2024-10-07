@@ -10,7 +10,7 @@
 
 [node name="Level Spider" instance=ExtResource("1_lqjma")]
 
-[node name="Next" parent="." index="1"]
+[node name="Next" parent="." index="2"]
 next_scene = ExtResource("2_ue4ur")
 
 [node name="Rock" parent="Obstacles" index="0" instance=ExtResource("2_chkqe")]

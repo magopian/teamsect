@@ -8,7 +8,7 @@
 
 [node name="Level Mosquito" instance=ExtResource("1_i6x18")]
 
-[node name="Next" parent="." index="1"]
+[node name="Next" parent="." index="2"]
 next_scene = ExtResource("15_qok23")
 
 [node name="Rock" parent="Obstacles" index="0" instance=ExtResource("3_asmvq")]

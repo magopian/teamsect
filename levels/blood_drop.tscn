@@ -6,7 +6,7 @@
 
 [node name="Level Blood Drop" instance=ExtResource("1_1ae0j")]
 
-[node name="Next" parent="." index="1"]
+[node name="Next" parent="." index="2"]
 next_scene = ExtResource("2_peehp")
 
 [node name="Rock" parent="Obstacles" index="0" instance=ExtResource("3_xsl0t")]
