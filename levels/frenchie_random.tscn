@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://binl6y75xpf0x"]
+[gd_scene load_steps=12 format=3 uid="uid://binl6y75xpf0x"]
 
 [ext_resource type="PackedScene" uid="uid://ba2ldlw3e1db2" path="res://levels/_base_level.tscn" id="1_inu4e"]
 [ext_resource type="PackedScene" uid="uid://ofoc2dl2fqmk" path="res://obstacles/rock.tscn" id="2_ryccc"]
 [ext_resource type="Script" path="res://levels/frenchie_random.gd" id="2_ul8ux"]
-[ext_resource type="Texture2D" uid="uid://pgu48gib573t" path="res://assets/sprites/button_blue_pressed.png" id="3_1bf0w"]
 [ext_resource type="PackedScene" uid="uid://lcrvpfho1mdv" path="res://dangling/mosquito.tscn" id="3_t0xfy"]
 [ext_resource type="PackedScene" uid="uid://brka63tjsoh1i" path="res://dangling/arm.tscn" id="4_nckl4"]
 [ext_resource type="PackedScene" uid="uid://bhrnso07lrta5" path="res://dangling/spider.tscn" id="5_6s3d2"]
@@ -16,8 +15,14 @@
 [node name="Level Frenchie Random" instance=ExtResource("1_inu4e")]
 script = ExtResource("2_ul8ux")
 
-[node name="ReloadButton" parent="YouWin" index="2"]
-texture_pressed = ExtResource("3_1bf0w")
+[node name="YouWinLabel" parent="YouWin" index="0"]
+offset_left = 598.0
+offset_top = 441.0
+offset_right = 1687.0
+offset_bottom = 704.0
+
+[node name="Label3" parent="YouWin" index="1"]
+offset_left = 855.0
 
 [node name="Obstacles" parent="." index="6"]
 unique_name_in_owner = true
