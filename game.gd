@@ -100,7 +100,6 @@ func _on_spiked(body: RigidBody2D) -> void:
 	Engine.time_scale = 1
 	explode_dangling()
 	await get_tree().create_timer(1).timeout
-	get_tree().reload_current_scene()
 
 
 func explode_dangling() -> void:

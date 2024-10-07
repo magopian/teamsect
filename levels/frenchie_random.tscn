@@ -111,6 +111,9 @@ offset_bottom = 704.0
 offset_left = 724.0
 offset_right = 1328.0
 
+[node name="Next" parent="." index="2"]
+position = Vector2(1830, 135)
+
 [node name="Obstacles" parent="." index="6"]
 unique_name_in_owner = true
 
@@ -162,4 +165,39 @@ stream = SubResource("AudioStreamRandomizer_kjuen")
 [node name="OhNoAudioStreamPlayer" parent="." index="13"]
 stream = SubResource("AudioStreamRandomizer_qlsaw")
 
+[node name="HBoxContainer" type="HBoxContainer" parent="." index="16"]
+offset_left = 27.0
+offset_top = 32.0
+offset_right = 777.0
+offset_bottom = 132.0
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="HBoxContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 50
+text = "Nightmare level"
+
+[node name="NightmareLevel" type="HSlider" parent="HBoxContainer" index="1"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 10.0
+
+[node name="NightmareLevelLabel" type="Label" parent="HBoxContainer" index="2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Spikes" type="Node2D" parent="." index="17"]
+unique_name_in_owner = true
+
 [connection signal="pressed" from="YouWin/ReloadButton" to="." method="_on_reload_button_pressed"]
+[connection signal="value_changed" from="HBoxContainer/NightmareLevel" to="." method="_on_h_slider_value_changed"]
