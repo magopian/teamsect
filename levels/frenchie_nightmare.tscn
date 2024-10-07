@@ -13,6 +13,9 @@
 
 [node name="Level Frenchie" instance=ExtResource("1_ldlcy")]
 
+[node name="Label2" parent="YouWin/ReloadButton/HBoxContainer" index="1"]
+text = "[center][wave amp=50.0 freq=5.0 connected=1]RANDOM[/wave][/center]"
+
 [node name="Rock" parent="Obstacles" index="0" instance=ExtResource("2_wqwc4")]
 position = Vector2(1645, 878)
 
