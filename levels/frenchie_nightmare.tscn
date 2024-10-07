@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://canulknnhh36"]
+[gd_scene load_steps=12 format=3 uid="uid://canulknnhh36"]
 
 [ext_resource type="PackedScene" uid="uid://ba2ldlw3e1db2" path="res://levels/_base_level.tscn" id="1_ldlcy"]
 [ext_resource type="PackedScene" uid="uid://ofoc2dl2fqmk" path="res://obstacles/rock.tscn" id="2_wqwc4"]
+[ext_resource type="PackedScene" uid="uid://d4k6rk2r8n3pg" path="res://obstacles/spikes.tscn" id="3_6ttlv"]
 [ext_resource type="PackedScene" uid="uid://lcrvpfho1mdv" path="res://dangling/mosquito.tscn" id="3_oyxie"]
 [ext_resource type="PackedScene" uid="uid://brka63tjsoh1i" path="res://dangling/arm.tscn" id="4_hntku"]
 [ext_resource type="PackedScene" uid="uid://bhrnso07lrta5" path="res://dangling/spider.tscn" id="5_fsuyt"]
@@ -12,9 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://bpk6lfxvd4ot7" path="res://dangling/wine.tscn" id="10_6l5hd"]
 
 [node name="Level Frenchie" instance=ExtResource("1_ldlcy")]
-
-[node name="Label2" parent="YouWin/ReloadButton/HBoxContainer" index="1"]
-text = "[center][wave amp=50.0 freq=5.0 connected=1]RANDOM[/wave][/center]"
 
 [node name="Rock" parent="Obstacles" index="0" instance=ExtResource("2_wqwc4")]
 position = Vector2(1645, 878)
@@ -27,6 +25,9 @@ position = Vector2(1699, 349)
 
 [node name="Rock4" parent="Obstacles" index="3" instance=ExtResource("2_wqwc4")]
 position = Vector2(477, 854)
+
+[node name="SPIKES" parent="Obstacles" index="4" instance=ExtResource("3_6ttlv")]
+position = Vector2(864, 992)
 
 [node name="Bandaid" parent="ToBeDangled" index="0"]
 position = Vector2(631, 798)

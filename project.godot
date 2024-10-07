@@ -29,6 +29,10 @@ window/size/viewport_width=2304
 window/size/viewport_height=1296
 window/stretch/mode="canvas_items"
 
+[global_group]
+
+spikes=""
+
 [gui]
 
 theme/custom_font="res://assets/happy_paradise/Happy Paradise.otf"
@@ -54,6 +58,7 @@ restart={
 2d_physics/layer_9="Lillypad"
 2d_physics/layer_10="Frenchie"
 2d_physics/layer_11="Wine"
+2d_physics/layer_12="Spikes"
 2d_physics/layer_16="Obstacles"
 
 [rendering]

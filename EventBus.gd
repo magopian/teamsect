@@ -6,6 +6,7 @@ signal new_dangling(dangling_node: RigidBody2D)
 signal target_reached(target: RigidBody2D, body: RigidBody2D)
 signal win
 signal next
+signal spiked(body: RigidBody2D)
 
 
 func _process(_delta: float) -> void:

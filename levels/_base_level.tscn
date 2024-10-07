@@ -337,3 +337,6 @@ theme_override_font_sizes/bold_font_size = 92
 bbcode_enabled = true
 text = "[wave amp=50.0 freq=5.0 connected=1]RESTART[/wave]"
 fit_content = true
+
+[node name="Joints" type="Node2D" parent="."]
+unique_name_in_owner = true

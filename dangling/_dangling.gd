@@ -13,6 +13,7 @@ func _ready() -> void:
 	win_here.hide()
 	body_entered.connect(_on_body_entered)
 	set_collision_mask_value(16, true)
+	set_collision_layer_value(12, true)
 
 
 func _process(_delta: float) -> void:
