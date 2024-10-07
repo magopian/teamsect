@@ -23,33 +23,33 @@ position = Vector2(665, 349)
 position = Vector2(1699, 349)
 
 [node name="Rock4" parent="Obstacles" index="3" instance=ExtResource("2_wqwc4")]
-position = Vector2(765, 841)
+position = Vector2(477, 854)
 
 [node name="Bandaid" parent="ToBeDangled" index="0"]
-position = Vector2(1344, 764)
+position = Vector2(631, 798)
 
 [node name="Mosquito" parent="ToBeDangled" index="1" instance=ExtResource("3_oyxie")]
-position = Vector2(300, 1020)
+position = Vector2(1760, 551)
 
 [node name="Arm" parent="ToBeDangled" index="2" instance=ExtResource("4_hntku")]
-position = Vector2(678, 516)
+position = Vector2(641, 482)
 
 [node name="Spider" parent="ToBeDangled" index="3" instance=ExtResource("5_fsuyt")]
-position = Vector2(2088, 938)
+position = Vector2(290, 196)
 
 [node name="Web" parent="ToBeDangled" index="4" instance=ExtResource("6_qc6d6")]
 position = Vector2(1932, 805)
 
 [node name="Frog" parent="ToBeDangled" index="5" instance=ExtResource("7_e8moi")]
-position = Vector2(1961, 451)
+position = Vector2(1761, 56)
 
 [node name="Lilypad" parent="ToBeDangled" index="6" instance=ExtResource("8_s1suq")]
-position = Vector2(383, 683)
+position = Vector2(365, 999)
 
 [node name="Frenchie" parent="ToBeDangled" index="7" instance=ExtResource("9_hcy0g")]
-position = Vector2(316, 235)
+position = Vector2(2168, 94)
 
 [node name="Wine" parent="ToBeDangled" index="8" instance=ExtResource("10_6l5hd")]
-position = Vector2(2053, 195)
+position = Vector2(679, 50)
 
 [connection signal="pressed" from="YouWin/ReloadButton" to="." method="_on_reload_button_pressed"]

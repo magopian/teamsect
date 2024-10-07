@@ -18,37 +18,37 @@
 next_scene = ExtResource("2_f1ehw")
 
 [node name="Rock" parent="Obstacles" index="0" instance=ExtResource("2_iaghe")]
-position = Vector2(1665, 662)
+position = Vector2(1754, 498)
 
 [node name="Rock2" parent="Obstacles" index="1" instance=ExtResource("2_iaghe")]
-position = Vector2(673, 739)
+position = Vector2(489, 571)
 
 [node name="Rock3" parent="Obstacles" index="2" instance=ExtResource("2_iaghe")]
-position = Vector2(1161, 291)
+position = Vector2(999, 768)
 
 [node name="Bandaid" parent="ToBeDangled" index="0"]
-position = Vector2(2120, 1082)
+position = Vector2(800, 1009)
 
 [node name="Mosquito" parent="ToBeDangled" index="1" instance=ExtResource("3_4b3uq")]
-position = Vector2(1572, 486)
+position = Vector2(1783, 254)
 
 [node name="Arm" parent="ToBeDangled" index="2" instance=ExtResource("4_qny8p")]
-position = Vector2(678, 516)
+position = Vector2(240, 543)
 
 [node name="Spider" parent="ToBeDangled" index="3" instance=ExtResource("5_7shwh")]
-position = Vector2(610, 918)
+position = Vector2(609, 691)
 
 [node name="Web" parent="ToBeDangled" index="4" instance=ExtResource("6_pt74r")]
 position = Vector2(1616, 755)
 
 [node name="Frog" parent="ToBeDangled" index="5" instance=ExtResource("7_xxgsn")]
-position = Vector2(1961, 451)
+position = Vector2(471, 941)
 
 [node name="Lilypad" parent="ToBeDangled" index="6" instance=ExtResource("8_ubj2b")]
-position = Vector2(383, 683)
+position = Vector2(1790, 946)
 
 [node name="Frenchie" parent="ToBeDangled" index="7" instance=ExtResource("9_gbl8k")]
-position = Vector2(316, 235)
+position = Vector2(1966, 514)
 
 [node name="Wine" parent="ToBeDangled" index="8" instance=ExtResource("10_k5o4v")]
-position = Vector2(2053, 195)
+position = Vector2(733, 264)
