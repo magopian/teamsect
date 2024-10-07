@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://dmvp2b2kh1tqm"]
+[gd_scene load_steps=12 format=3 uid="uid://dmvp2b2kh1tqm"]
 
 [ext_resource type="Script" path="res://start_menu.gd" id="1_cyv5k"]
 [ext_resource type="PackedScene" uid="uid://bv3c4q2qx0kgk" path="res://background_pattern.tscn" id="2_qq0qr"]
 [ext_resource type="Texture2D" uid="uid://bvnjmmcem6v5y" path="res://assets/sprites/button_blue.png" id="4_05re1"]
-[ext_resource type="FontFile" uid="uid://brb2v7uqwe5x7" path="res://assets/Cute Dino/Cute Dino.ttf" id="4_yn7xf"]
 [ext_resource type="Texture2D" uid="uid://pgu48gib573t" path="res://assets/sprites/button_blue_pressed.png" id="5_6bvjf"]
 [ext_resource type="PackedScene" uid="uid://g2egjj0way1e" path="res://pointer/finger.tscn" id="5_6o7i7"]
 [ext_resource type="Texture2D" uid="uid://ckgi1jycdi858" path="res://assets/sprites/random.png" id="5_o6bnq"]
@@ -56,7 +55,6 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 19
-theme_override_fonts/font = ExtResource("4_yn7xf")
 theme_override_font_sizes/font_size = 60
 text = "The Great Dangli"
 horizontal_alignment = 1
@@ -67,7 +65,6 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 19
-theme_override_fonts/font = ExtResource("4_yn7xf")
 theme_override_font_sizes/font_size = 60
 text = "n"
 horizontal_alignment = 1
@@ -79,7 +76,6 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 19
-theme_override_fonts/font = ExtResource("4_yn7xf")
 theme_override_font_sizes/font_size = 60
 text = "g"
 horizontal_alignment = 1
@@ -118,21 +114,20 @@ expand_mode = 2
 
 [node name="Label2" type="RichTextLabel" parent="CanvasLayer/CenterContainer/TextureRect/MarginContainer/VBoxContainer/HBoxContainer2/ReloadButton/HBoxContainer"]
 clip_contents = false
-custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 12
-theme_override_fonts/normal_font = ExtResource("4_yn7xf")
 theme_override_font_sizes/bold_italics_font_size = 30
 theme_override_font_sizes/italics_font_size = 30
 theme_override_font_sizes/mono_font_size = 30
 theme_override_font_sizes/normal_font_size = 30
 theme_override_font_sizes/bold_font_size = 30
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]RANDOM[/wave]"
+text = "[center][wave amp=50.0 freq=5.0 connected=1]RANDOM[/wave][/center]"
+scroll_active = false
 
 [node name="ClickSound" parent="CanvasLayer/CenterContainer/TextureRect/MarginContainer/VBoxContainer/HBoxContainer2/ReloadButton" instance=ExtResource("7_70olq")]
 
@@ -151,7 +146,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 68.0
+offset_left = 31.0
 offset_top = 21.0
 offset_right = -25.0
 offset_bottom = -37.0
@@ -160,21 +155,20 @@ grow_vertical = 2
 
 [node name="Label3" type="RichTextLabel" parent="CanvasLayer/CenterContainer/TextureRect/MarginContainer/VBoxContainer/HBoxContainer2/StartButton/HBoxContainer"]
 clip_contents = false
-custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 12
-theme_override_fonts/normal_font = ExtResource("4_yn7xf")
 theme_override_font_sizes/bold_italics_font_size = 30
 theme_override_font_sizes/italics_font_size = 30
 theme_override_font_sizes/mono_font_size = 30
 theme_override_font_sizes/normal_font_size = 30
 theme_override_font_sizes/bold_font_size = 30
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]START[/wave]"
+text = "[center][wave amp=50.0 freq=5.0 connected=1]START[/wave][/center]"
+scroll_active = false
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/CenterContainer/TextureRect/MarginContainer/VBoxContainer/HBoxContainer2/StartButton/HBoxContainer"]
 layout_mode = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ba2ldlw3e1db2"]
+[gd_scene load_steps=32 format=3 uid="uid://ba2ldlw3e1db2"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_l4uy6"]
 [ext_resource type="AudioStream" uid="uid://dvfxgkq1xj52h" path="res://assets/sounds/aie1.wav" id="2_bsm46"]
@@ -17,7 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://br1hu3flduvp8" path="res://next.tscn" id="14_pdpr7"]
 [ext_resource type="Texture2D" uid="uid://bvnjmmcem6v5y" path="res://assets/sprites/button_blue.png" id="15_6pkkh"]
 [ext_resource type="PackedScene" uid="uid://ba8uoqwjxbr5i" path="res://finish/win_here.tscn" id="15_mpby0"]
-[ext_resource type="FontFile" uid="uid://brb2v7uqwe5x7" path="res://assets/Cute Dino/Cute Dino.ttf" id="15_uj1d6"]
 [ext_resource type="Texture2D" uid="uid://ckgi1jycdi858" path="res://assets/sprites/random.png" id="16_uyu60"]
 [ext_resource type="Texture2D" uid="uid://pgu48gib573t" path="res://assets/sprites/button_blue_pressed.png" id="16_w8i5v"]
 [ext_resource type="PackedScene" uid="uid://d2e5o1u66fmrk" path="res://pointer/thumbtack.tscn" id="17_dgoyh"]
@@ -179,14 +178,13 @@ unique_name_in_owner = true
 
 [node name="YouWinLabel" type="RichTextLabel" parent="YouWin"]
 clip_contents = false
-offset_left = 581.0
-offset_top = 444.0
-offset_right = 1678.0
-offset_bottom = 654.0
+offset_left = 693.0
+offset_top = 446.0
+offset_right = 1598.0
+offset_bottom = 691.0
 size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_constants/outline_size = 30
-theme_override_fonts/normal_font = ExtResource("15_uj1d6")
 theme_override_font_sizes/bold_italics_font_size = 92
 theme_override_font_sizes/italics_font_size = 92
 theme_override_font_sizes/mono_font_size = 92
@@ -198,14 +196,13 @@ fit_content = true
 
 [node name="Label3" type="RichTextLabel" parent="YouWin"]
 clip_contents = false
-offset_left = 840.0
-offset_top = 718.0
-offset_right = 1406.0
-offset_bottom = 762.0
+offset_left = 783.0
+offset_top = 720.0
+offset_right = 1292.0
+offset_bottom = 764.0
 size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_constants/outline_size = 10
-theme_override_fonts/normal_font = ExtResource("15_uj1d6")
 theme_override_font_sizes/bold_italics_font_size = 30
 theme_override_font_sizes/italics_font_size = 30
 theme_override_font_sizes/mono_font_size = 30
@@ -215,10 +212,10 @@ bbcode_enabled = true
 text = "Would you like to try random levels?"
 
 [node name="ReloadButton" type="TextureButton" parent="YouWin"]
-offset_left = 1420.0
-offset_top = 693.0
-offset_right = 1669.0
-offset_bottom = 795.0
+offset_left = 1306.0
+offset_top = 695.0
+offset_right = 1555.0
+offset_bottom = 797.0
 size_flags_horizontal = 4
 texture_normal = ExtResource("15_6pkkh")
 texture_pressed = ExtResource("16_w8i5v")
@@ -247,7 +244,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_constants/outline_size = 10
-theme_override_fonts/normal_font = ExtResource("15_uj1d6")
 theme_override_font_sizes/bold_italics_font_size = 30
 theme_override_font_sizes/italics_font_size = 30
 theme_override_font_sizes/mono_font_size = 30
@@ -327,7 +323,6 @@ offset_right = 1338.0
 offset_bottom = 1252.0
 mouse_filter = 2
 theme_override_constants/outline_size = 15
-theme_override_fonts/normal_font = ExtResource("15_uj1d6")
 theme_override_font_sizes/bold_italics_font_size = 92
 theme_override_font_sizes/italics_font_size = 92
 theme_override_font_sizes/mono_font_size = 92

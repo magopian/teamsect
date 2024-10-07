@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@onready var target: Node2D
+@onready var target: Node
 
 func _ready() -> void:
 	if not is_inside_tree():

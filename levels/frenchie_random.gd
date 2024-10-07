@@ -7,7 +7,10 @@ func _ready() -> void:
 	randomize_children_position(obstacles)
 	randomize_children_position(to_be_dangled)
 	super()
-	next.get_node("Label").text = "[center][wave amp=50.0 freq=5.0 connected=1]RELOAD[/wave][/center]"
+	var next_label: RichTextLabel = next.get_node("%Label")
+	next_label.text = "[center][wave amp=50.0 freq=5.0 connected=1]RELOAD[/wave][/center]"
+	next_label.add_theme_font_size_override("normal_font_size", 42)
+	
 	next.show()
 	next.next_scene = (load(scene_file_path) as PackedScene)
 

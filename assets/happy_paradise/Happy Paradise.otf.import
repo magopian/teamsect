@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://kdsiry33hx6"
-path="res://.godot/imported/Cute Dino.otf-549ae52e6d8cbb60ccc5c42eccc25862.fontdata"
+uid="uid://cdkxrey1tnue7"
+path="res://.godot/imported/Happy Paradise.otf-579fdc36e25505e2dc0f34f429b132b7.fontdata"
 
 [deps]
 
-source_file="res://assets/Cute Dino/Cute Dino.otf"
-dest_files=["res://.godot/imported/Cute Dino.otf-549ae52e6d8cbb60ccc5c42eccc25862.fontdata"]
+source_file="res://assets/happy_paradise/Happy Paradise.otf"
+dest_files=["res://.godot/imported/Happy Paradise.otf-579fdc36e25505e2dc0f34f429b132b7.fontdata"]
 
 [params]
 
