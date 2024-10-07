@@ -23,7 +23,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body == accepts:
+	if body == accepts and body.get_parent().name == "Dangling":
 		play_random_sound(ahh_sounds)
 		collision_mask = 0
 		set_collision_mask_value(16, true)

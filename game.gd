@@ -24,7 +24,6 @@ func _ready() -> void:
 	EventBus.pricked.connect(_on_pricked)
 	EventBus.target_reached.connect(_on_target_reached)
 	EventBus.win.connect(_on_win)
-	EventBus.next.connect(_on_next)
 	restart_label.hide()
 	next.hide()
 	you_win_label.hide()
@@ -63,6 +62,8 @@ func setup_dangling() -> void:
 
 
 func _on_pricked() -> void:
+	if not is_inside_tree():
+		return
 	if dangling.get_children().size() > 1:
 		get_tree().reload_current_scene()
 	var aie: AudioStream = aie_sounds.pick_random()
@@ -89,7 +90,3 @@ func _on_win() -> void:
 		next.show()
 	else:
 		you_win_label.show()
-	
-
-func _on_next() -> void:
-	print("next!!")
