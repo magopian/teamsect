@@ -1,0 +1,54 @@
+[gd_scene load_steps=12 format=3 uid="uid://lvmgiyk3rix7"]
+
+[ext_resource type="PackedScene" uid="uid://ba2ldlw3e1db2" path="res://levels/_base_level.tscn" id="1_ydsfr"]
+[ext_resource type="PackedScene" uid="uid://canulknnhh36" path="res://levels/frenchie_nightmare.tscn" id="2_f1ehw"]
+[ext_resource type="PackedScene" uid="uid://ofoc2dl2fqmk" path="res://obstacles/rock.tscn" id="2_iaghe"]
+[ext_resource type="PackedScene" uid="uid://lcrvpfho1mdv" path="res://dangling/mosquito.tscn" id="3_4b3uq"]
+[ext_resource type="PackedScene" uid="uid://brka63tjsoh1i" path="res://dangling/arm.tscn" id="4_qny8p"]
+[ext_resource type="PackedScene" uid="uid://bhrnso07lrta5" path="res://dangling/spider.tscn" id="5_7shwh"]
+[ext_resource type="PackedScene" uid="uid://caeeogw7egn20" path="res://dangling/web.tscn" id="6_pt74r"]
+[ext_resource type="PackedScene" uid="uid://dcptxrwfwct6j" path="res://dangling/frog.tscn" id="7_xxgsn"]
+[ext_resource type="PackedScene" uid="uid://sec7f4n8sa3u" path="res://dangling/lilypad.tscn" id="8_ubj2b"]
+[ext_resource type="PackedScene" uid="uid://dwe0atxwtwuw7" path="res://dangling/frenchie.tscn" id="9_gbl8k"]
+[ext_resource type="PackedScene" uid="uid://bpk6lfxvd4ot7" path="res://dangling/wine.tscn" id="10_k5o4v"]
+
+[node name="Level Frenchie" instance=ExtResource("1_ydsfr")]
+
+[node name="Next" parent="." index="1"]
+next_scene = ExtResource("2_f1ehw")
+
+[node name="Rock" parent="Obstacles" index="0" instance=ExtResource("2_iaghe")]
+position = Vector2(1665, 662)
+
+[node name="Rock2" parent="Obstacles" index="1" instance=ExtResource("2_iaghe")]
+position = Vector2(673, 739)
+
+[node name="Rock3" parent="Obstacles" index="2" instance=ExtResource("2_iaghe")]
+position = Vector2(1161, 291)
+
+[node name="Bandaid" parent="ToBeDangled" index="0"]
+position = Vector2(2120, 1082)
+
+[node name="Mosquito" parent="ToBeDangled" index="1" instance=ExtResource("3_4b3uq")]
+position = Vector2(1572, 486)
+
+[node name="Arm" parent="ToBeDangled" index="2" instance=ExtResource("4_qny8p")]
+position = Vector2(678, 516)
+
+[node name="Spider" parent="ToBeDangled" index="3" instance=ExtResource("5_7shwh")]
+position = Vector2(610, 918)
+
+[node name="Web" parent="ToBeDangled" index="4" instance=ExtResource("6_pt74r")]
+position = Vector2(1616, 755)
+
+[node name="Frog" parent="ToBeDangled" index="5" instance=ExtResource("7_xxgsn")]
+position = Vector2(1961, 451)
+
+[node name="Lilypad" parent="ToBeDangled" index="6" instance=ExtResource("8_ubj2b")]
+position = Vector2(383, 683)
+
+[node name="Frenchie" parent="ToBeDangled" index="7" instance=ExtResource("9_gbl8k")]
+position = Vector2(316, 235)
+
+[node name="Wine" parent="ToBeDangled" index="8" instance=ExtResource("10_k5o4v")]
+position = Vector2(2053, 195)

@@ -48,6 +48,7 @@ restart={
 2d_physics/layer_9="Lillypad"
 2d_physics/layer_10="Frenchie"
 2d_physics/layer_11="Wine"
+2d_physics/layer_16="Obstacles"
 
 [rendering]
 

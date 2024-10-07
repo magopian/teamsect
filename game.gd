@@ -71,7 +71,7 @@ func _on_pricked() -> void:
 	camera_shaker.apply_shake(10, 5)
 	bandaid.current_target = true
 	restart_label.show()
-	
+
 func _on_target_reached(target: RigidBody2D, body: RigidBody2D) -> void:
 	if body.name == "Blood drop":
 		var ahh: AudioStream = ahh_sounds.pick_random()

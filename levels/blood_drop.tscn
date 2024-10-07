@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://buuuuhk2yc2r2"]
+[gd_scene load_steps=4 format=3 uid="uid://buuuuhk2yc2r2"]
 
 [ext_resource type="PackedScene" uid="uid://ba2ldlw3e1db2" path="res://levels/_base_level.tscn" id="1_1ae0j"]
 [ext_resource type="PackedScene" uid="uid://bjnqg4otufwuc" path="res://levels/mosquito.tscn" id="2_peehp"]
+[ext_resource type="PackedScene" uid="uid://ofoc2dl2fqmk" path="res://obstacles/rock.tscn" id="3_xsl0t"]
 
 [node name="Level Blood Drop" instance=ExtResource("1_1ae0j")]
 
 [node name="Next" parent="." index="1"]
 next_scene = ExtResource("2_peehp")
+
+[node name="Rock" parent="Obstacles" index="0" instance=ExtResource("3_xsl0t")]
+position = Vector2(1410, 759)

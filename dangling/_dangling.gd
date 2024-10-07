@@ -12,7 +12,8 @@ class_name Dangling extends RigidBody2D
 func _ready() -> void:
 	win_here.hide()
 	body_entered.connect(_on_body_entered)
-	
+	set_collision_mask_value(16, true)
+
 
 func _process(_delta: float) -> void:
 	if not is_inside_tree() or name == "Blood drop":
@@ -25,6 +26,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body == accepts:
 		play_random_sound(ahh_sounds)
 		collision_mask = 0
+		set_collision_mask_value(16, true)
 		set_deferred("contact_monitor", false)
 		EventBus.new_dangling.emit(self)
 		set_deferred("gravity_scale", 8)

@@ -1,12 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgj3yfttisgxg"]
+[gd_scene load_steps=8 format=3 uid="uid://cgj3yfttisgxg"]
 
 [ext_resource type="PackedScene" uid="uid://ba2ldlw3e1db2" path="res://levels/_base_level.tscn" id="1_lqjma"]
+[ext_resource type="PackedScene" uid="uid://ofoc2dl2fqmk" path="res://obstacles/rock.tscn" id="2_chkqe"]
+[ext_resource type="PackedScene" uid="uid://dn4atj7p1y52v" path="res://levels/frog.tscn" id="2_ue4ur"]
 [ext_resource type="PackedScene" uid="uid://lcrvpfho1mdv" path="res://dangling/mosquito.tscn" id="18_8lfoq"]
 [ext_resource type="PackedScene" uid="uid://bhrnso07lrta5" path="res://dangling/spider.tscn" id="19_l5wav"]
 [ext_resource type="PackedScene" uid="uid://brka63tjsoh1i" path="res://dangling/arm.tscn" id="19_lhp2s"]
 [ext_resource type="PackedScene" uid="uid://caeeogw7egn20" path="res://dangling/web.tscn" id="21_lmtik"]
 
 [node name="Level Spider" instance=ExtResource("1_lqjma")]
+
+[node name="Next" parent="." index="1"]
+next_scene = ExtResource("2_ue4ur")
+
+[node name="Rock" parent="Obstacles" index="0" instance=ExtResource("2_chkqe")]
+position = Vector2(734, 675)
+
+[node name="Rock2" parent="Obstacles" index="1" instance=ExtResource("2_chkqe")]
+position = Vector2(1718, 841)
 
 [node name="Mosquito" parent="ToBeDangled" index="1" node_paths=PackedStringArray("next_target") instance=ExtResource("18_8lfoq")]
 position = Vector2(1384, 813)

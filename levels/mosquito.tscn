@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjnqg4otufwuc"]
+[gd_scene load_steps=6 format=3 uid="uid://bjnqg4otufwuc"]
 
 [ext_resource type="PackedScene" uid="uid://ba2ldlw3e1db2" path="res://levels/_base_level.tscn" id="1_i6x18"]
+[ext_resource type="PackedScene" uid="uid://ofoc2dl2fqmk" path="res://obstacles/rock.tscn" id="3_asmvq"]
 [ext_resource type="PackedScene" uid="uid://cgj3yfttisgxg" path="res://levels/spider.tscn" id="15_qok23"]
 [ext_resource type="PackedScene" uid="uid://brka63tjsoh1i" path="res://dangling/arm.tscn" id="19_mmt26"]
 [ext_resource type="PackedScene" uid="uid://lcrvpfho1mdv" path="res://dangling/mosquito.tscn" id="21_bt61h"]
@@ -9,6 +10,9 @@
 
 [node name="Next" parent="." index="1"]
 next_scene = ExtResource("15_qok23")
+
+[node name="Rock" parent="Obstacles" index="0" instance=ExtResource("3_asmvq")]
+position = Vector2(830, 561)
 
 [node name="Mosquito" parent="ToBeDangled" index="1" instance=ExtResource("21_bt61h")]
 position = Vector2(1752, 928)

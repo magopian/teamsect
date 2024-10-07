@@ -1,6 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4uqlspeehbfc"]
+[gd_scene load_steps=12 format=3 uid="uid://c4uqlspeehbfc"]
 
 [ext_resource type="PackedScene" uid="uid://ba2ldlw3e1db2" path="res://levels/_base_level.tscn" id="1_2v7mi"]
+[ext_resource type="PackedScene" uid="uid://lvmgiyk3rix7" path="res://levels/frenchie_hard.tscn" id="2_etpio"]
+[ext_resource type="PackedScene" uid="uid://ofoc2dl2fqmk" path="res://obstacles/rock.tscn" id="2_lemhs"]
 [ext_resource type="PackedScene" uid="uid://lcrvpfho1mdv" path="res://dangling/mosquito.tscn" id="18_h2sxd"]
 [ext_resource type="PackedScene" uid="uid://brka63tjsoh1i" path="res://dangling/arm.tscn" id="19_06tcv"]
 [ext_resource type="PackedScene" uid="uid://bhrnso07lrta5" path="res://dangling/spider.tscn" id="20_0f8ik"]
@@ -12,11 +14,20 @@
 
 [node name="Level Frenchie" instance=ExtResource("1_2v7mi")]
 
+[node name="Next" parent="." index="1"]
+next_scene = ExtResource("2_etpio")
+
+[node name="Rock" parent="Obstacles" index="0" instance=ExtResource("2_lemhs")]
+position = Vector2(1665, 662)
+
+[node name="Rock2" parent="Obstacles" index="1" instance=ExtResource("2_lemhs")]
+position = Vector2(673, 739)
+
 [node name="Bandaid" parent="ToBeDangled" index="0"]
 position = Vector2(2120, 1082)
 
 [node name="Mosquito" parent="ToBeDangled" index="1" instance=ExtResource("18_h2sxd")]
-position = Vector2(1308, 841)
+position = Vector2(1572, 486)
 
 [node name="Arm" parent="ToBeDangled" index="2" instance=ExtResource("19_06tcv")]
 position = Vector2(678, 516)
