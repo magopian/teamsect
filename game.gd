@@ -12,6 +12,7 @@ extends Node2D
 @onready var blood_drop: Dangling = %"Blood drop"
 @onready var restart_label: RichTextLabel = %RestartLabel
 @onready var to_be_dangled: Node2D = %ToBeDangled
+@onready var you_win_label: RichTextLabel = %YouWinLabel
 
 @export var aie_sounds: Array[AudioStream]
 @export var ahh_sounds: Array[AudioStream]
@@ -26,6 +27,7 @@ func _ready() -> void:
 	EventBus.next.connect(_on_next)
 	restart_label.hide()
 	next.hide()
+	you_win_label.hide()
 	win_here.show()
 	setup_accept_next()
 
@@ -85,6 +87,8 @@ func _on_target_reached(target: RigidBody2D, body: RigidBody2D) -> void:
 func _on_win() -> void:
 	if next.next_scene:
 		next.show()
+	else:
+		you_win_label.show()
 	
 
 func _on_next() -> void:

@@ -153,6 +153,24 @@ ahh_sounds = Array[AudioStream]([ExtResource("8_2tnh1"), ExtResource("9_o5wda"),
 
 [node name="BackgroundPattern" parent="." instance=ExtResource("14_lpqy7")]
 
+[node name="YouWinLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+offset_left = 615.0
+offset_top = 444.0
+offset_right = 1676.0
+offset_bottom = 707.0
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/bold_italics_font_size = 92
+theme_override_font_sizes/italics_font_size = 92
+theme_override_font_sizes/mono_font_size = 92
+theme_override_font_sizes/normal_font_size = 192
+theme_override_font_sizes/bold_font_size = 92
+bbcode_enabled = true
+text = "[rainbow freq=1.0 sat=0.8 val=0.8][wave amp=50.0 freq=5.0 connected=1]YOU WIN!!!![/wave][/rainbow]"
+fit_content = true
+
 [node name="Next" parent="." instance=ExtResource("14_pdpr7")]
 unique_name_in_owner = true
 visible = false
