@@ -19,5 +19,5 @@ func randomize_children_position(root_item: Node2D) -> void:
 
 
 func _on_win() -> void:
-	if next.next_scene:
-		next.show()
+	next.hide()
+	you_win.show()

@@ -51,3 +51,5 @@ position = Vector2(316, 235)
 
 [node name="Wine" parent="ToBeDangled" index="8" instance=ExtResource("10_6l5hd")]
 position = Vector2(2053, 195)
+
+[connection signal="pressed" from="YouWin/ReloadButton" to="." method="_on_reload_button_pressed"]

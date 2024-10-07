@@ -12,7 +12,7 @@ class_name BaseLevel extends Node2D
 @onready var blood_drop: Dangling = %"Blood drop"
 @onready var restart_label: RichTextLabel = %RestartLabel
 @onready var to_be_dangled: Node2D = %ToBeDangled
-@onready var you_win_label: RichTextLabel = %YouWinLabel
+@onready var you_win: Node2D = %YouWin
 
 @export var aie_sounds: Array[AudioStream]
 @export var ahh_sounds: Array[AudioStream]
@@ -26,7 +26,7 @@ func _ready() -> void:
 	EventBus.win.connect(_on_win)
 	restart_label.hide()
 	next.hide()
-	you_win_label.hide()
+	you_win.hide()
 	win_here.show()
 	setup_accept_next()
 
@@ -89,4 +89,8 @@ func _on_win() -> void:
 	if next.next_scene:
 		next.show()
 	else:
-		you_win_label.show()
+		you_win.show()
+
+
+func _on_reload_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://levels/frenchie_random.tscn")
