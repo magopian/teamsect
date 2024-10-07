@@ -192,15 +192,16 @@ theme_override_font_sizes/mono_font_size = 92
 theme_override_font_sizes/normal_font_size = 192
 theme_override_font_sizes/bold_font_size = 92
 bbcode_enabled = true
-text = "[rainbow freq=1.0 sat=0.8 val=0.8][wave amp=50.0 freq=5.0 connected=1]YOU WIN!!!![/wave][/rainbow]"
+text = "[center][rainbow freq=1.0 sat=0.8 val=0.8][wave amp=50.0 freq=5.0 connected=1]YOU WIN!!!![/wave][/rainbow][/center]"
 fit_content = true
+scroll_active = false
 
 [node name="Label3" type="RichTextLabel" parent="YouWin"]
 clip_contents = false
-offset_left = 783.0
-offset_top = 720.0
-offset_right = 1292.0
-offset_bottom = 764.0
+offset_left = 716.0
+offset_top = 717.0
+offset_right = 1324.0
+offset_bottom = 761.0
 size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_constants/outline_size = 10
@@ -210,13 +211,15 @@ theme_override_font_sizes/mono_font_size = 30
 theme_override_font_sizes/normal_font_size = 30
 theme_override_font_sizes/bold_font_size = 30
 bbcode_enabled = true
-text = "Would you like to try random levels?"
+text = "[center]Would you like to try random levels?[/center]
+"
+scroll_active = false
 
 [node name="ReloadButton" type="TextureButton" parent="YouWin"]
-offset_left = 1306.0
-offset_top = 695.0
-offset_right = 1555.0
-offset_bottom = 797.0
+offset_left = 1339.0
+offset_top = 694.0
+offset_right = 1588.0
+offset_bottom = 796.0
 size_flags_horizontal = 4
 texture_normal = ExtResource("15_6pkkh")
 texture_pressed = ExtResource("16_w8i5v")
@@ -251,7 +254,8 @@ theme_override_font_sizes/mono_font_size = 30
 theme_override_font_sizes/normal_font_size = 30
 theme_override_font_sizes/bold_font_size = 30
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1]RANDOM[/wave]"
+text = "[center][wave amp=50.0 freq=5.0 connected=1]RANDOM[/wave][/center]"
+scroll_active = false
 
 [node name="ClickSound" parent="YouWin/ReloadButton" instance=ExtResource("17_m3t8s")]
 
@@ -259,8 +263,7 @@ text = "[wave amp=50.0 freq=5.0 connected=1]RANDOM[/wave]"
 
 [node name="Next" parent="." instance=ExtResource("14_pdpr7")]
 unique_name_in_owner = true
-visible = false
-position = Vector2(985, 109)
+position = Vector2(1000, 130)
 
 [node name="WinHere" parent="." instance=ExtResource("15_mpby0")]
 unique_name_in_owner = true
@@ -320,10 +323,10 @@ bus = &"SFX"
 [node name="RestartLabel" type="RichTextLabel" parent="."]
 unique_name_in_owner = true
 clip_contents = false
-offset_left = 938.0
-offset_top = 1126.0
-offset_right = 1338.0
-offset_bottom = 1252.0
+offset_left = 992.0
+offset_top = 1122.0
+offset_right = 1392.0
+offset_bottom = 1248.0
 mouse_filter = 2
 theme_override_constants/outline_size = 15
 theme_override_font_sizes/bold_italics_font_size = 92
