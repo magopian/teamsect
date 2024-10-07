@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6ahy51ofto1b"]
+
+[ext_resource type="AudioStream" uid="uid://cjgdp1s53braj" path="res://assets/sounds/mouse-click-sound-233951.wav" id="1_j64v5"]
+[ext_resource type="Script" path="res://click_sound.gd" id="2_mm1e7"]
+[ext_resource type="AudioStream" uid="uid://bwhyuj4mrv6tm" path="res://assets/sounds/mouse-click-sound-233951_up.wav" id="3_mb157"]
+
+[node name="ClickSound" type="AudioStreamPlayer"]
+bus = &"SFX"
+script = ExtResource("2_mm1e7")
+down_click = ExtResource("1_j64v5")
+up_click = ExtResource("3_mb157")

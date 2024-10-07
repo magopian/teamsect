@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ba2ldlw3e1db2"]
+[gd_scene load_steps=30 format=3 uid="uid://ba2ldlw3e1db2"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_l4uy6"]
 [ext_resource type="AudioStream" uid="uid://dvfxgkq1xj52h" path="res://assets/sounds/aie1.wav" id="2_bsm46"]
@@ -18,7 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://bvnjmmcem6v5y" path="res://assets/sprites/button_blue.png" id="15_6pkkh"]
 [ext_resource type="PackedScene" uid="uid://ba8uoqwjxbr5i" path="res://finish/win_here.tscn" id="15_mpby0"]
 [ext_resource type="Texture2D" uid="uid://ckgi1jycdi858" path="res://assets/sprites/random.png" id="16_uyu60"]
+[ext_resource type="Texture2D" uid="uid://pgu48gib573t" path="res://assets/sprites/button_blue_pressed.png" id="16_w8i5v"]
 [ext_resource type="PackedScene" uid="uid://d2e5o1u66fmrk" path="res://pointer/thumbtack.tscn" id="17_dgoyh"]
+[ext_resource type="PackedScene" uid="uid://c6ahy51ofto1b" path="res://click_sound.tscn" id="17_m3t8s"]
 [ext_resource type="PackedScene" uid="uid://g2egjj0way1e" path="res://pointer/finger.tscn" id="18_xu7gg"]
 [ext_resource type="PackedScene" uid="uid://cyp2hqnu74snb" path="res://dangling/bandaid.tscn" id="19_l82vu"]
 [ext_resource type="PackedScene" uid="uid://cnyp1yfsumkta" path="res://dangling/blood_drop.tscn" id="19_onll2"]
@@ -198,6 +200,7 @@ offset_right = 1669.0
 offset_bottom = 795.0
 size_flags_horizontal = 4
 texture_normal = ExtResource("15_6pkkh")
+texture_pressed = ExtResource("16_w8i5v")
 stretch_mode = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="YouWin/ReloadButton"]
@@ -229,6 +232,8 @@ theme_override_font_sizes/normal_font_size = 30
 theme_override_font_sizes/bold_font_size = 30
 bbcode_enabled = true
 text = "[wave amp=50.0 freq=5.0 connected=1]RANDOM[/wave]"
+
+[node name="ClickSound" parent="YouWin/ReloadButton" instance=ExtResource("17_m3t8s")]
 
 [node name="Next" parent="." instance=ExtResource("14_pdpr7")]
 unique_name_in_owner = true

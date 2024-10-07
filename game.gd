@@ -93,4 +93,5 @@ func _on_win() -> void:
 
 
 func _on_reload_button_pressed() -> void:
+	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_file("res://levels/frenchie_random.tscn")

@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://dmvp2b2kh1tqm"]
+[gd_scene load_steps=12 format=3 uid="uid://dmvp2b2kh1tqm"]
 
 [ext_resource type="Script" path="res://start_menu.gd" id="1_cyv5k"]
 [ext_resource type="PackedScene" uid="uid://bv3c4q2qx0kgk" path="res://background_pattern.tscn" id="2_qq0qr"]
 [ext_resource type="Texture2D" uid="uid://bvnjmmcem6v5y" path="res://assets/sprites/button_blue.png" id="4_05re1"]
+[ext_resource type="Texture2D" uid="uid://pgu48gib573t" path="res://assets/sprites/button_blue_pressed.png" id="5_6bvjf"]
 [ext_resource type="PackedScene" uid="uid://g2egjj0way1e" path="res://pointer/finger.tscn" id="5_6o7i7"]
 [ext_resource type="Texture2D" uid="uid://ckgi1jycdi858" path="res://assets/sprites/random.png" id="5_o6bnq"]
+[ext_resource type="PackedScene" uid="uid://c6ahy51ofto1b" path="res://click_sound.tscn" id="7_70olq"]
+[ext_resource type="Texture2D" uid="uid://br8vyvq5nwe10" path="res://assets/sprites/button_pressed.png" id="8_fkwvf"]
 [ext_resource type="Texture2D" uid="uid://dwbrtdgek761u" path="res://assets/sprites/start_menu.png" id="14_tfhaf"]
 [ext_resource type="Texture2D" uid="uid://cjcgxgmmy0vw6" path="res://assets/sprites/button.png" id="15_3sdbn"]
 [ext_resource type="Texture2D" uid="uid://bnh7dfvyig5jt" path="res://assets/sprites/arrow.png" id="16_j324i"]
@@ -67,6 +70,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("4_05re1")
+texture_pressed = ExtResource("5_6bvjf")
 stretch_mode = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/CenterContainer/TextureRect/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/ReloadButton"]
@@ -99,6 +103,8 @@ theme_override_font_sizes/bold_font_size = 30
 bbcode_enabled = true
 text = "[wave amp=50.0 freq=5.0 connected=1]RANDOM[/wave]"
 
+[node name="ClickSound" parent="CanvasLayer/CenterContainer/TextureRect/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/ReloadButton" instance=ExtResource("7_70olq")]
+
 [node name="Control" type="Control" parent="CanvasLayer/CenterContainer/TextureRect/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -107,6 +113,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("15_3sdbn")
+texture_pressed = ExtResource("8_fkwvf")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/CenterContainer/TextureRect/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/StartButton"]
 layout_mode = 1
@@ -137,6 +144,8 @@ text = "[wave amp=50.0 freq=5.0 connected=1]START[/wave]"
 layout_mode = 2
 texture = ExtResource("16_j324i")
 expand_mode = 2
+
+[node name="ClickSound" parent="CanvasLayer/CenterContainer/TextureRect/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/StartButton" instance=ExtResource("7_70olq")]
 
 [node name="Finger" parent="CanvasLayer" instance=ExtResource("5_6o7i7")]
 

@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://br1hu3flduvp8"]
+[gd_scene load_steps=7 format=3 uid="uid://br1hu3flduvp8"]
 
 [ext_resource type="Texture2D" uid="uid://bnh7dfvyig5jt" path="res://assets/sprites/arrow.png" id="1_p8jan"]
 [ext_resource type="Script" path="res://next.gd" id="1_th0a2"]
 [ext_resource type="Texture2D" uid="uid://cjcgxgmmy0vw6" path="res://assets/sprites/button.png" id="2_jerru"]
 [ext_resource type="PackedScene" uid="uid://db2vr0h3x3j1h" path="res://blinker.tscn" id="2_ourv0"]
+[ext_resource type="PackedScene" uid="uid://c6ahy51ofto1b" path="res://click_sound.tscn" id="3_dsmou"]
+[ext_resource type="Texture2D" uid="uid://br8vyvq5nwe10" path="res://assets/sprites/button_pressed.png" id="3_mupyj"]
 
 [node name="Next" type="Node2D"]
 script = ExtResource("1_th0a2")
@@ -15,6 +17,9 @@ offset_right = 75.0
 offset_bottom = -5.00001
 scale = Vector2(2.5, 2.5)
 texture_normal = ExtResource("2_jerru")
+texture_pressed = ExtResource("3_mupyj")
+
+[node name="ClickSound" parent="Button" instance=ExtResource("3_dsmou")]
 
 [node name="Label" type="RichTextLabel" parent="."]
 offset_left = 47.0
