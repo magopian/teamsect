@@ -14,6 +14,7 @@ class_name BaseLevel extends Node2D
 @onready var you_win: Node2D = %YouWin
 @onready var ahh_audio_stream_player: AudioStreamPlayer = %AhhAudioStreamPlayer
 @onready var aie_audio_stream_player: AudioStreamPlayer = %AieAudioStreamPlayer
+@onready var oh_no_audio_stream_player: AudioStreamPlayer = %OhNoAudioStreamPlayer
 @onready var joints: Node2D = %Joints
 
 @export var explode_velocity: int = 3500
@@ -92,6 +93,7 @@ func _on_win() -> void:
 
 
 func _on_spiked(body: RigidBody2D) -> void:
+	oh_no_audio_stream_player.play()
 	camera_shaker.apply_shake(10, 5)
 	Engine.time_scale = 0.1
 	await get_tree().create_timer(1, true, false, true).timeout

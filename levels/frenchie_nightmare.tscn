@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://canulknnhh36"]
+[gd_scene load_steps=19 format=3 uid="uid://canulknnhh36"]
 
 [ext_resource type="PackedScene" uid="uid://ba2ldlw3e1db2" path="res://levels/_base_level.tscn" id="1_ldlcy"]
 [ext_resource type="PackedScene" uid="uid://ofoc2dl2fqmk" path="res://obstacles/rock.tscn" id="2_wqwc4"]
@@ -11,6 +11,21 @@
 [ext_resource type="PackedScene" uid="uid://sec7f4n8sa3u" path="res://dangling/lilypad.tscn" id="8_s1suq"]
 [ext_resource type="PackedScene" uid="uid://dwe0atxwtwuw7" path="res://dangling/frenchie.tscn" id="9_hcy0g"]
 [ext_resource type="PackedScene" uid="uid://bpk6lfxvd4ot7" path="res://dangling/wine.tscn" id="10_6l5hd"]
+[ext_resource type="AudioStream" uid="uid://dvfxgkq1xj52h" path="res://assets/sounds/aie1.wav" id="12_ojx2a"]
+[ext_resource type="AudioStream" uid="uid://b680uu4n7beyo" path="res://assets/sounds/aie2.wav" id="13_3rxn7"]
+[ext_resource type="AudioStream" uid="uid://c3rmqsos006vl" path="res://assets/sounds/aie3.wav" id="14_5l2g8"]
+[ext_resource type="AudioStream" uid="uid://b6li86k5d0n22" path="res://assets/sounds/aie4.wav" id="15_du8t6"]
+[ext_resource type="AudioStream" uid="uid://ccb512mqllc0m" path="res://assets/sounds/aie5.wav" id="16_s0fg7"]
+[ext_resource type="AudioStream" uid="uid://wcegmh6he1mg" path="res://assets/sounds/aie6.wav" id="17_moppl"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_822p4"]
+streams_count = 6
+stream_0/stream = ExtResource("12_ojx2a")
+stream_1/stream = ExtResource("13_3rxn7")
+stream_2/stream = ExtResource("14_5l2g8")
+stream_3/stream = ExtResource("15_du8t6")
+stream_4/stream = ExtResource("16_s0fg7")
+stream_5/stream = ExtResource("17_moppl")
 
 [node name="Level Frenchie" instance=ExtResource("1_ldlcy")]
 
@@ -55,5 +70,8 @@ position = Vector2(2168, 94)
 
 [node name="Wine" parent="ToBeDangled" index="8" instance=ExtResource("10_6l5hd")]
 position = Vector2(679, 50)
+
+[node name="AieAudioStreamPlayer" parent="." index="12"]
+stream = SubResource("AudioStreamRandomizer_822p4")
 
 [connection signal="pressed" from="YouWin/ReloadButton" to="." method="_on_reload_button_pressed"]
