@@ -1,0 +1,223 @@
+[gd_scene load_steps=26 format=3 uid="uid://ba2ldlw3e1db2"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_l4uy6"]
+[ext_resource type="AudioStream" uid="uid://dvfxgkq1xj52h" path="res://assets/sounds/aie1.wav" id="2_bsm46"]
+[ext_resource type="AudioStream" uid="uid://b680uu4n7beyo" path="res://assets/sounds/aie2.wav" id="3_dg05g"]
+[ext_resource type="AudioStream" uid="uid://c3rmqsos006vl" path="res://assets/sounds/aie3.wav" id="4_x54yv"]
+[ext_resource type="AudioStream" uid="uid://b6li86k5d0n22" path="res://assets/sounds/aie4.wav" id="5_jcccd"]
+[ext_resource type="AudioStream" uid="uid://ccb512mqllc0m" path="res://assets/sounds/aie5.wav" id="6_p0jqj"]
+[ext_resource type="AudioStream" uid="uid://wcegmh6he1mg" path="res://assets/sounds/aie6.wav" id="7_asr7f"]
+[ext_resource type="AudioStream" uid="uid://drxkch6opxgst" path="res://assets/sounds/ahh1.wav" id="8_2tnh1"]
+[ext_resource type="AudioStream" uid="uid://dvomgs1nmqmxi" path="res://assets/sounds/ahh2.wav" id="9_o5wda"]
+[ext_resource type="AudioStream" uid="uid://b4fs17fysf5ro" path="res://assets/sounds/ahh3.wav" id="10_0yayq"]
+[ext_resource type="AudioStream" uid="uid://b8drdmnd5e0cg" path="res://assets/sounds/ahh4.wav" id="11_o4gde"]
+[ext_resource type="AudioStream" uid="uid://bvjqwxc08vfo2" path="res://assets/sounds/ahh5.wav" id="12_rm007"]
+[ext_resource type="AudioStream" uid="uid://bayvfu26k3q7y" path="res://assets/sounds/ahh6.wav" id="13_u5xbx"]
+[ext_resource type="PackedScene" uid="uid://bv3c4q2qx0kgk" path="res://background_pattern.tscn" id="14_lpqy7"]
+[ext_resource type="PackedScene" uid="uid://br1hu3flduvp8" path="res://next.tscn" id="14_pdpr7"]
+[ext_resource type="PackedScene" uid="uid://ba8uoqwjxbr5i" path="res://finish/win_here.tscn" id="15_mpby0"]
+[ext_resource type="PackedScene" uid="uid://d2e5o1u66fmrk" path="res://pointer/thumbtack.tscn" id="17_dgoyh"]
+[ext_resource type="PackedScene" uid="uid://g2egjj0way1e" path="res://pointer/finger.tscn" id="18_xu7gg"]
+[ext_resource type="PackedScene" uid="uid://cyp2hqnu74snb" path="res://dangling/bandaid.tscn" id="19_l82vu"]
+[ext_resource type="PackedScene" uid="uid://cnyp1yfsumkta" path="res://dangling/blood_drop.tscn" id="19_onll2"]
+[ext_resource type="PackedScene" uid="uid://cjvlbipxsf1ct" path="res://shaker.tscn" id="20_r8egk"]
+
+[sub_resource type="Animation" id="Animation_5r065"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dangling/Blood drop:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dangling/Blood drop:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Dangling/Blood drop:collision_layer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_k2dei"]
+resource_name = "eaten"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dangling/Blood drop:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dangling/Blood drop:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Dangling/Blood drop:collision_layer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
+
+[sub_resource type="Animation" id="Animation_euinb"]
+resource_name = "pricked"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dangling/Blood drop:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dangling/Blood drop:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 0.133333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Dangling/Blood drop:collision_layer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0wwxt"]
+_data = {
+"RESET": SubResource("Animation_5r065"),
+"eaten": SubResource("Animation_k2dei"),
+"pricked": SubResource("Animation_euinb")
+}
+
+[node name="Base Level" type="Node2D"]
+script = ExtResource("1_l4uy6")
+aie_sounds = Array[AudioStream]([ExtResource("2_bsm46"), ExtResource("3_dg05g"), ExtResource("4_x54yv"), ExtResource("5_jcccd"), ExtResource("6_p0jqj"), ExtResource("7_asr7f")])
+ahh_sounds = Array[AudioStream]([ExtResource("8_2tnh1"), ExtResource("9_o5wda"), ExtResource("10_0yayq"), ExtResource("11_o4gde"), ExtResource("12_rm007"), ExtResource("13_u5xbx")])
+
+[node name="BackgroundPattern" parent="." instance=ExtResource("14_lpqy7")]
+
+[node name="Next" parent="." instance=ExtResource("14_pdpr7")]
+unique_name_in_owner = true
+visible = false
+position = Vector2(985, 109)
+
+[node name="WinHere" parent="." instance=ExtResource("15_mpby0")]
+unique_name_in_owner = true
+position = Vector2(1137, 1081)
+
+[node name="Thumbtack" parent="." instance=ExtResource("17_dgoyh")]
+unique_name_in_owner = true
+position = Vector2(1135, 1072)
+
+[node name="Finger" parent="." instance=ExtResource("18_xu7gg")]
+unique_name_in_owner = true
+position = Vector2(1146, 528)
+
+[node name="ToBeDangled" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Bandaid" parent="ToBeDangled" node_paths=PackedStringArray("accepts") instance=ExtResource("19_l82vu")]
+unique_name_in_owner = true
+position = Vector2(1610, 392)
+accepts = NodePath("../../Dangling/Blood drop")
+
+[node name="Dangling" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Blood drop" parent="Dangling" instance=ExtResource("19_onll2")]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(1e-05, 1e-05)
+collision_layer = 0
+collision_mask = 0
+max_contacts_reported = 10
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="CameraShaker" parent="Camera2D" instance=ExtResource("20_r8egk")]
+unique_name_in_owner = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_0wwxt")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+bus = &"SFX"
+
+[node name="RestartLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+offset_left = 953.0
+offset_top = 1099.0
+offset_right = 1353.0
+offset_bottom = 1225.0
+mouse_filter = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/bold_italics_font_size = 92
+theme_override_font_sizes/italics_font_size = 92
+theme_override_font_sizes/mono_font_size = 92
+theme_override_font_sizes/normal_font_size = 92
+theme_override_font_sizes/bold_font_size = 92
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1]RESTART[/wave]"
+fit_content = true

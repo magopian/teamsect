@@ -15,7 +15,8 @@ func _ready() -> void:
 	
 
 func _process(_delta: float) -> void:
-	if not is_inside_tree():
+	if not is_inside_tree() or name == "Blood drop":
+		# Blood drop is managed differently.
 		return
 	win_here.visible = current_target
 
