@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bhrnso07lrta5"]
+[gd_scene load_steps=15 format=3 uid="uid://bhrnso07lrta5"]
 
 [ext_resource type="PackedScene" uid="uid://dpj6u1auvkvf0" path="res://dangling/_dangling.tscn" id="1_jrj10"]
 [ext_resource type="Texture2D" uid="uid://ck4im0lcikl1o" path="res://assets/sprites/spider.png" id="1_uyjhh"]
@@ -36,10 +36,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dgyvj"]
+streams_count = 6
+stream_0/stream = ExtResource("2_hrrpo")
+stream_1/stream = ExtResource("3_c6gm1")
+stream_2/stream = ExtResource("4_ei76e")
+stream_3/stream = ExtResource("5_nxsxh")
+stream_4/stream = ExtResource("6_5tlti")
+stream_5/stream = ExtResource("7_1sor6")
+
 [node name="Spider" instance=ExtResource("1_jrj10")]
 collision_layer = 32
 collision_mask = 16
-ahh_sounds = Array[AudioStream]([ExtResource("2_hrrpo"), ExtResource("3_c6gm1"), ExtResource("4_ei76e"), ExtResource("5_nxsxh"), ExtResource("6_5tlti"), ExtResource("7_1sor6")])
 metadata/_edit_vertical_guides_ = [-313.0]
 metadata/_edit_horizontal_guides_ = [122.0]
 
@@ -64,3 +72,6 @@ frame_progress = 0.388015
 
 [node name="anchor" type="Marker2D" parent="." index="3"]
 position = Vector2(54, 119)
+
+[node name="AudioStreamPlayer" parent="." index="4"]
+stream = SubResource("AudioStreamRandomizer_dgyvj")

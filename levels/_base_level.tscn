@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ba2ldlw3e1db2"]
+[gd_scene load_steps=33 format=3 uid="uid://ba2ldlw3e1db2"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_l4uy6"]
 [ext_resource type="AudioStream" uid="uid://dvfxgkq1xj52h" path="res://assets/sounds/aie1.wav" id="2_bsm46"]
@@ -151,10 +151,26 @@ _data = {
 "pricked": SubResource("Animation_euinb")
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7iwxt"]
+streams_count = 6
+stream_0/stream = ExtResource("8_2tnh1")
+stream_1/stream = ExtResource("9_o5wda")
+stream_2/stream = ExtResource("10_0yayq")
+stream_3/stream = ExtResource("11_o4gde")
+stream_4/stream = ExtResource("12_rm007")
+stream_5/stream = ExtResource("13_u5xbx")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fvco2"]
+streams_count = 6
+stream_0/stream = ExtResource("2_bsm46")
+stream_1/stream = ExtResource("3_dg05g")
+stream_2/stream = ExtResource("4_x54yv")
+stream_3/stream = ExtResource("5_jcccd")
+stream_4/stream = ExtResource("6_p0jqj")
+stream_5/stream = ExtResource("7_asr7f")
+
 [node name="Base Level" type="Node2D"]
 script = ExtResource("1_l4uy6")
-aie_sounds = Array[AudioStream]([ExtResource("2_bsm46"), ExtResource("3_dg05g"), ExtResource("4_x54yv"), ExtResource("5_jcccd"), ExtResource("6_p0jqj"), ExtResource("7_asr7f")])
-ahh_sounds = Array[AudioStream]([ExtResource("8_2tnh1"), ExtResource("9_o5wda"), ExtResource("10_0yayq"), ExtResource("11_o4gde"), ExtResource("12_rm007"), ExtResource("13_u5xbx")])
 
 [node name="BackgroundPattern" parent="." instance=ExtResource("14_lpqy7")]
 
@@ -292,8 +308,14 @@ libraries = {
 "": SubResource("AnimationLibrary_0wwxt")
 }
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AhhAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_7iwxt")
+bus = &"SFX"
+
+[node name="AieAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_fvco2")
 bus = &"SFX"
 
 [node name="RestartLabel" type="RichTextLabel" parent="."]

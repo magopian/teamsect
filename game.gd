@@ -4,7 +4,6 @@ class_name BaseLevel extends Node2D
 @onready var dangling: Node2D = %Dangling
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 @onready var joint_scene: PackedScene = preload("res://dangling/joint.tscn")
-@onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 @onready var camera_shaker: Node2D = %CameraShaker
 @onready var win_here: Sprite2D = %WinHere
 @onready var next: Node2D = %Next
@@ -13,9 +12,8 @@ class_name BaseLevel extends Node2D
 @onready var restart_label: RichTextLabel = %RestartLabel
 @onready var to_be_dangled: Node2D = %ToBeDangled
 @onready var you_win: Node2D = %YouWin
-
-@export var aie_sounds: Array[AudioStream]
-@export var ahh_sounds: Array[AudioStream]
+@onready var ahh_audio_stream_player: AudioStreamPlayer = %AhhAudioStreamPlayer
+@onready var aie_audio_stream_player: AudioStreamPlayer = %AieAudioStreamPlayer
 
 
 func _ready() -> void:
@@ -66,9 +64,7 @@ func _on_pricked() -> void:
 		return
 	if dangling.get_children().size() > 1:
 		get_tree().reload_current_scene()
-	var aie: AudioStream = aie_sounds.pick_random()
-	audio_stream_player.stream = aie
-	audio_stream_player.play()
+	aie_audio_stream_player.play()
 	animation_player.play("pricked")
 	win_here.hide()
 	camera_shaker.apply_shake(10, 5)
@@ -77,9 +73,7 @@ func _on_pricked() -> void:
 
 func _on_target_reached(target: RigidBody2D, body: RigidBody2D) -> void:
 	if body.name == "Blood drop":
-		var ahh: AudioStream = ahh_sounds.pick_random()
-		audio_stream_player.stream = ahh
-		audio_stream_player.play()
+		ahh_audio_stream_player.play()
 	target.current_target = false
 	if target.next_target:
 		target.next_target.current_target = true

@@ -1,15 +1,15 @@
 class_name Dangling extends RigidBody2D
 
 @onready var win_here: Sprite2D = %WinHere
-@onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
+@onready var audio_stream_player: AudioStreamPlayer
 
 @export var next_target: RigidBody2D
 @export var current_target: bool = false
 @export var accepts: RigidBody2D
-@export var ahh_sounds: Array[AudioStream]
 
 
 func _ready() -> void:
+	audio_stream_player = get_node_or_null("%AudioStreamPlayer")
 	win_here.hide()
 	body_entered.connect(_on_body_entered)
 	set_collision_mask_value(16, true)
@@ -24,7 +24,8 @@ func _process(_delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body == accepts and body.get_parent().name == "Dangling":
-		play_random_sound(ahh_sounds)
+		if audio_stream_player:  # The blood drop doesn't have its own audio stream player
+			audio_stream_player.play()
 		collision_mask = 0
 		set_collision_mask_value(16, true)
 		set_deferred("contact_monitor", false)
@@ -34,11 +35,3 @@ func _on_body_entered(body: Node2D) -> void:
 		EventBus.target_reached.emit(self, body)
 		if not next_target:
 			EventBus.win.emit()
-
-
-func play_random_sound(sounds: Array[AudioStream]) -> void:
-	if not sounds:
-		return
-	var aie: AudioStream = sounds.pick_random()
-	audio_stream_player.stream = aie
-	audio_stream_player.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://brka63tjsoh1i"]
+[gd_scene load_steps=12 format=3 uid="uid://brka63tjsoh1i"]
 
 [ext_resource type="PackedScene" uid="uid://dpj6u1auvkvf0" path="res://dangling/_dangling.tscn" id="1_tm6r3"]
 [ext_resource type="AudioStream" uid="uid://blv15hql867v2" path="res://assets/sounds/mosquito1.wav" id="2_hw5j2"]
@@ -14,10 +14,18 @@
 radius = 20.0
 height = 126.0
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ocqhq"]
+streams_count = 6
+stream_0/stream = ExtResource("2_hw5j2")
+stream_1/stream = ExtResource("3_05ngc")
+stream_2/stream = ExtResource("4_i1srk")
+stream_3/stream = ExtResource("5_a2u3t")
+stream_4/stream = ExtResource("6_haen3")
+stream_5/stream = ExtResource("7_r452r")
+
 [node name="Arm" instance=ExtResource("1_tm6r3")]
 collision_layer = 16
 collision_mask = 8
-ahh_sounds = Array[AudioStream]([ExtResource("2_hw5j2"), ExtResource("3_05ngc"), ExtResource("4_i1srk"), ExtResource("5_a2u3t"), ExtResource("6_haen3"), ExtResource("7_r452r")])
 metadata/_edit_vertical_guides_ = [-150.0]
 metadata/_edit_horizontal_guides_ = [122.0]
 
@@ -39,3 +47,6 @@ texture = ExtResource("3_w5u2e")
 
 [node name="anchor" type="Marker2D" parent="." index="3"]
 position = Vector2(7, 121)
+
+[node name="AudioStreamPlayer" parent="." index="4"]
+stream = SubResource("AudioStreamRandomizer_ocqhq")

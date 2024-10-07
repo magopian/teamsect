@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bpk6lfxvd4ot7"]
+[gd_scene load_steps=13 format=3 uid="uid://bpk6lfxvd4ot7"]
 
 [ext_resource type="PackedScene" uid="uid://dpj6u1auvkvf0" path="res://dangling/_dangling.tscn" id="1_is040"]
 [ext_resource type="AudioStream" uid="uid://srt0e4beqe4k" path="res://assets/sounds/frenchie1.wav" id="2_bl2xc"]
@@ -15,10 +15,19 @@
 radius = 22.0
 height = 128.0
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_86u0e"]
+streams_count = 7
+stream_0/stream = ExtResource("2_bl2xc")
+stream_1/stream = ExtResource("3_lcjtv")
+stream_2/stream = ExtResource("4_e776j")
+stream_3/stream = ExtResource("5_hgm4w")
+stream_4/stream = ExtResource("6_jl2cr")
+stream_5/stream = ExtResource("7_tfxal")
+stream_6/stream = ExtResource("8_rwfts")
+
 [node name="Wine" instance=ExtResource("1_is040")]
 collision_layer = 1024
 collision_mask = 512
-ahh_sounds = Array[AudioStream]([ExtResource("2_bl2xc"), ExtResource("3_lcjtv"), ExtResource("4_e776j"), ExtResource("5_hgm4w"), ExtResource("6_jl2cr"), ExtResource("7_tfxal"), ExtResource("8_rwfts")])
 metadata/_edit_vertical_guides_ = [-81.0]
 metadata/_edit_horizontal_guides_ = [122.0]
 
@@ -38,3 +47,6 @@ texture = ExtResource("3_td7ea")
 
 [node name="anchor" type="Marker2D" parent="." index="3"]
 position = Vector2(0, 121)
+
+[node name="AudioStreamPlayer" parent="." index="4"]
+stream = SubResource("AudioStreamRandomizer_86u0e")

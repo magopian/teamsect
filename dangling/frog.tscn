@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dcptxrwfwct6j"]
+[gd_scene load_steps=15 format=3 uid="uid://dcptxrwfwct6j"]
 
 [ext_resource type="PackedScene" uid="uid://dpj6u1auvkvf0" path="res://dangling/_dangling.tscn" id="1_iomtr"]
 [ext_resource type="PackedScene" uid="uid://ba8uoqwjxbr5i" path="res://finish/win_here.tscn" id="2_ajb5r"]
@@ -36,10 +36,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_g7s5d"]
+streams_count = 6
+stream_0/stream = ExtResource("2_bbwqg")
+stream_1/stream = ExtResource("3_jf12j")
+stream_2/stream = ExtResource("4_0olu1")
+stream_3/stream = ExtResource("5_cx04n")
+stream_4/stream = ExtResource("6_fc1fa")
+stream_5/stream = ExtResource("7_yrw5e")
+
 [node name="Frog" instance=ExtResource("1_iomtr")]
 collision_layer = 128
 collision_mask = 64
-ahh_sounds = Array[AudioStream]([ExtResource("2_bbwqg"), ExtResource("3_jf12j"), ExtResource("4_0olu1"), ExtResource("5_cx04n"), ExtResource("6_fc1fa"), ExtResource("7_yrw5e")])
 metadata/_edit_vertical_guides_ = [-231.0]
 metadata/_edit_horizontal_guides_ = [122.0]
 
@@ -65,3 +73,6 @@ offset = Vector2(-2, 64)
 
 [node name="anchor" type="Marker2D" parent="." index="3"]
 position = Vector2(-125, 101)
+
+[node name="AudioStreamPlayer" parent="." index="4"]
+stream = SubResource("AudioStreamRandomizer_g7s5d")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dwe0atxwtwuw7"]
+[gd_scene load_steps=16 format=3 uid="uid://dwe0atxwtwuw7"]
 
 [ext_resource type="PackedScene" uid="uid://dpj6u1auvkvf0" path="res://dangling/_dangling.tscn" id="1_ra1v2"]
 [ext_resource type="AudioStream" uid="uid://srt0e4beqe4k" path="res://assets/sounds/frenchie1.wav" id="2_iv17a"]
@@ -37,10 +37,19 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ugi82"]
+streams_count = 7
+stream_0/stream = ExtResource("2_iv17a")
+stream_1/stream = ExtResource("3_vpb5l")
+stream_2/stream = ExtResource("4_mlbfr")
+stream_3/stream = ExtResource("5_0j43l")
+stream_4/stream = ExtResource("6_cr0lu")
+stream_5/stream = ExtResource("7_og8ru")
+stream_6/stream = ExtResource("8_s1nkm")
+
 [node name="Frenchie" instance=ExtResource("1_ra1v2")]
 collision_layer = 512
 collision_mask = 256
-ahh_sounds = Array[AudioStream]([ExtResource("2_iv17a"), ExtResource("3_vpb5l"), ExtResource("4_mlbfr"), ExtResource("5_0j43l"), ExtResource("6_cr0lu"), ExtResource("7_og8ru"), ExtResource("8_s1nkm")])
 metadata/_edit_vertical_guides_ = [-158.0]
 metadata/_edit_horizontal_guides_ = [121.0]
 
@@ -65,3 +74,6 @@ offset = Vector2(-2, 64)
 
 [node name="anchor" type="Marker2D" parent="." index="3"]
 position = Vector2(-21, 120)
+
+[node name="AudioStreamPlayer" parent="." index="4"]
+stream = SubResource("AudioStreamRandomizer_ugi82")
