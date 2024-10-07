@@ -11,7 +11,6 @@ func _ready() -> void:
 	next.show()
 	next.next_scene = (load(scene_file_path) as PackedScene)
 
-
 func randomize_children_position(root_item: Node2D) -> void:
 	var viewport_size: Vector2 = get_viewport_rect().size as Vector2
 	for item in root_item.get_children():
