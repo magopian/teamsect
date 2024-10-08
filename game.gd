@@ -19,6 +19,8 @@ class_name BaseLevel extends Node2D
 
 @export var explode_velocity: int = 3500
 
+var pricked: bool = false
+
 
 func _ready() -> void:
 	setup_dangling()
@@ -67,8 +69,12 @@ func setup_dangling() -> void:
 func _on_pricked() -> void:
 	if not is_inside_tree():
 		return
-	if dangling.get_children().size() > 1:
+	if pricked:
+		#TODO: have a better check to know if it's our first prick 
+		# (don't restart) or if we only have the blood drop... 
+		# which flew away and is lost forever (we want to restart)
 		get_tree().reload_current_scene()
+	pricked = true
 	aie_audio_stream_player.play()
 	animation_player.play("pricked")
 	win_here.hide()
@@ -93,6 +99,7 @@ func _on_win() -> void:
 
 
 func _on_spiked(body: RigidBody2D) -> void:
+	pricked = true # Well... it's as if :D
 	oh_no_audio_stream_player.play()
 	camera_shaker.apply_shake(10, 5)
 	Engine.time_scale = 0.1
@@ -107,8 +114,3 @@ func explode_dangling() -> void:
 		joint.queue_free()
 	for child in (dangling.get_children() as Array[RigidBody2D]):
 		child.linear_velocity = Vector2.from_angle(randi_range(-180, 180)) * explode_velocity
-		print(child.linear_velocity, " ", child.rotation_degrees)
-
-func _on_reload_button_pressed() -> void:
-	await get_tree().create_timer(0.1).timeout
-	get_tree().change_scene_to_file("res://levels/frenchie_random.tscn")

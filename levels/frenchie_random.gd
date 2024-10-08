@@ -37,6 +37,7 @@ func _on_h_slider_value_changed(value: float) -> void:
 	nightmare_level_label.text = str(value)
 	generate_spikes()
 
+
 func generate_spikes() -> void:
 	for spike in spikes.get_children():
 		spike.queue_free()
@@ -44,4 +45,9 @@ func generate_spikes() -> void:
 		var spike: Spike = spike_scene.instantiate()
 		spikes.add_child(spike)
 	randomize_children_position(spikes)
-	
+
+
+func _on_reload_button_pressed() -> void:
+	# This button is only available in the random levels
+	await get_tree().create_timer(0.1).timeout
+	get_tree().reload_current_scene()
