@@ -16,6 +16,7 @@ class_name BaseLevel extends Node2D
 @onready var aie_audio_stream_player: AudioStreamPlayer = %AieAudioStreamPlayer
 @onready var oh_no_audio_stream_player: AudioStreamPlayer = %OhNoAudioStreamPlayer
 @onready var joints: Node2D = %Joints
+@onready var you_lose: Node2D = %YouLose
 
 @export var explode_velocity: int = 3500
 
@@ -29,9 +30,12 @@ func _ready() -> void:
 	EventBus.target_reached.connect(_on_target_reached)
 	EventBus.win.connect(_on_win)
 	EventBus.spiked.connect(_on_spiked)
+	EventBus.dangling_ejected.connect(_on_dangling_ejected)
+	blood_drop.dangling = true
 	restart_label.hide()
 	next.hide()
 	you_win.hide()
+	you_lose.hide()
 	win_here.show()
 	setup_accept_next()
 
@@ -50,6 +54,7 @@ func setup_accept_next() -> void:
 
 
 func add_dangling(dangling_node: RigidBody2D) -> void:
+	dangling_node.dangling = true
 	dangling_node.call_deferred("reparent", dangling)
 	call_deferred("setup_dangling")
 
@@ -75,6 +80,7 @@ func _on_pricked() -> void:
 		# which flew away and is lost forever (we want to restart)
 		get_tree().reload_current_scene()
 	pricked = true
+	you_lose.hide()
 	aie_audio_stream_player.play()
 	animation_player.play("pricked")
 	win_here.hide()
@@ -98,16 +104,25 @@ func _on_win() -> void:
 		Music.play_win()
 
 
-func _on_spiked(body: RigidBody2D) -> void:
-	reset_win_here()
+func _on_spiked(_body: RigidBody2D) -> void:
 	pricked = true # Well... it's as if :D
+	lose()
+	explode_dangling()
+	await get_tree().create_timer(1).timeout
+
+
+func _on_dangling_ejected(_dangling: Dangling) -> void:
+	you_lose.show()
+	lose()
+
+
+func lose() -> void:
+	reset_win_here()
 	oh_no_audio_stream_player.play()
 	camera_shaker.apply_shake(10, 5)
 	Engine.time_scale = 0.1
 	await get_tree().create_timer(1, true, false, true).timeout
 	Engine.time_scale = 1
-	explode_dangling()
-	await get_tree().create_timer(1).timeout
 
 
 func reset_win_here() -> void:

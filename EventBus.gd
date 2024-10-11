@@ -7,6 +7,7 @@ signal target_reached(target: RigidBody2D, body: RigidBody2D)
 signal win
 signal next
 signal spiked(body: RigidBody2D)
+signal dangling_ejected(dangling: Dangling)
 
 @export var nightmare_level = 0
 

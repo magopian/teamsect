@@ -2,10 +2,14 @@ class_name Dangling extends RigidBody2D
 
 @onready var win_here: Sprite2D = %WinHere
 @onready var audio_stream_player: AudioStreamPlayer
+@onready var visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = %VisibleOnScreenNotifier2D
 
 @export var next_target: RigidBody2D
 @export var current_target: bool = false
 @export var accepts: RigidBody2D
+
+
+var dangling: bool = false
 
 
 func _ready() -> void:
@@ -36,3 +40,8 @@ func _on_body_entered(body: Node2D) -> void:
 		EventBus.target_reached.emit(self, body)
 		if not next_target:
 			EventBus.win.emit()
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	if not dangling:
+		EventBus.dangling_ejected.emit(self)
