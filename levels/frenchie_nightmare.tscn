@@ -71,7 +71,7 @@ position = Vector2(2168, 94)
 [node name="Wine" parent="ToBeDangled" index="8" instance=ExtResource("10_6l5hd")]
 position = Vector2(679, 50)
 
-[node name="AieAudioStreamPlayer" parent="." index="12"]
+[node name="AieAudioStreamPlayer" parent="." index="11"]
 stream = SubResource("AudioStreamRandomizer_822p4")
 
 [connection signal="pressed" from="YouWin/ReloadButton" to="." method="_on_reload_button_pressed"]

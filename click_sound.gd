@@ -15,7 +15,6 @@ func _on_button_down() -> void:
 		play()
 		
 func _on_button_up() -> void:
-	print("button up")
 	if is_inside_tree():
 		stream = up_click
 		play()

@@ -7,12 +7,17 @@ class_name Finger extends RigidBody2D
 func _ready() -> void:
 	var sprite: Sprite2D = get_node("Sprite2D")
 	sprite_size = sprite.texture.get_size()
+	set_mouse_position()
 
 
 func get_anchor_position() -> Vector2:
 	return anchor.global_position
 
 func _physics_process(_delta: float) -> void:
+	set_mouse_position()
+
+
+func set_mouse_position() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	var mouse_position: Vector2 = get_global_mouse_position()
 	var viewport_size: Vector2 = get_viewport_rect().size as Vector2

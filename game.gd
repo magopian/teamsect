@@ -24,7 +24,6 @@ var pricked: bool = false
 
 
 func _ready() -> void:
-	setup_dangling()
 	EventBus.new_dangling.connect(add_dangling)
 	EventBus.pricked.connect(_on_pricked)
 	EventBus.target_reached.connect(_on_target_reached)
@@ -80,6 +79,8 @@ func _on_pricked() -> void:
 		# which flew away and is lost forever (we want to restart)
 		get_tree().reload_current_scene()
 		Engine.time_scale = 1  # In case we pricked or spiked too fast and often
+	else:
+		setup_dangling()  # Setup the blood drop to be properly dangling.
 	pricked = true
 	you_lose.hide()
 	aie_audio_stream_player.play()

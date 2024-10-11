@@ -226,7 +226,7 @@ position = Vector2(1135, 1072)
 
 [node name="Finger" parent="." instance=ExtResource("18_xu7gg")]
 unique_name_in_owner = true
-position = Vector2(1146, 528)
+position = Vector2(0, 0)
 
 [node name="Obstacles" type="Node2D" parent="."]
 
@@ -299,6 +299,7 @@ unique_name_in_owner = true
 
 [node name="YouLose" type="Node2D" parent="."]
 unique_name_in_owner = true
+visible = false
 
 [node name="YouLoseLabel" type="RichTextLabel" parent="YouLose"]
 clip_contents = false
