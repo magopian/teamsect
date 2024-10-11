@@ -101,20 +101,10 @@ stream_6/stream = SubResource("AudioStreamWAV_wv7qr")
 [node name="Level Frenchie Random" instance=ExtResource("1_inu4e")]
 script = ExtResource("2_ul8ux")
 
-[node name="YouWinLabel" parent="YouWin" index="0"]
-offset_left = 598.0
-offset_top = 441.0
-offset_right = 1687.0
-offset_bottom = 704.0
-
-[node name="Label3" parent="YouWin" index="1"]
-offset_left = 724.0
-offset_right = 1328.0
-
-[node name="Next" parent="." index="2"]
+[node name="Next" parent="." index="1"]
 position = Vector2(1830, 135)
 
-[node name="Obstacles" parent="." index="6"]
+[node name="Obstacles" parent="." index="5"]
 unique_name_in_owner = true
 
 [node name="Rock" parent="Obstacles" index="0" instance=ExtResource("2_ryccc")]
@@ -156,13 +146,13 @@ position = Vector2(316, 235)
 [node name="Wine" parent="ToBeDangled" index="8" instance=ExtResource("10_flpwk")]
 position = Vector2(2053, 195)
 
-[node name="AhhAudioStreamPlayer" parent="." index="11"]
+[node name="AhhAudioStreamPlayer" parent="." index="10"]
 stream = SubResource("AudioStreamRandomizer_6g4ct")
 
-[node name="AieAudioStreamPlayer" parent="." index="12"]
+[node name="AieAudioStreamPlayer" parent="." index="11"]
 stream = SubResource("AudioStreamRandomizer_kjuen")
 
-[node name="OhNoAudioStreamPlayer" parent="." index="13"]
+[node name="OhNoAudioStreamPlayer" parent="." index="12"]
 stream = SubResource("AudioStreamRandomizer_qlsaw")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." index="16"]
@@ -199,5 +189,15 @@ text = "0"
 [node name="Spikes" type="Node2D" parent="." index="17"]
 unique_name_in_owner = true
 
-[connection signal="pressed" from="YouWin/ReloadButton" to="." method="_on_reload_button_pressed"]
+[node name="YouWinLabel" parent="YouWin" index="0"]
+offset_left = 598.0
+offset_top = 441.0
+offset_right = 1687.0
+offset_bottom = 704.0
+
+[node name="Label3" parent="YouWin" index="1"]
+offset_left = 724.0
+offset_right = 1328.0
+
 [connection signal="value_changed" from="HBoxContainer/NightmareLevel" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="YouWin/ReloadButton" to="." method="_on_reload_button_pressed"]
