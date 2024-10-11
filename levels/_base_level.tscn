@@ -226,6 +226,7 @@ position = Vector2(1135, 1072)
 
 [node name="Finger" parent="." instance=ExtResource("18_xu7gg")]
 unique_name_in_owner = true
+z_index = 10
 position = Vector2(0, 0)
 
 [node name="Obstacles" type="Node2D" parent="."]
@@ -293,6 +294,9 @@ theme_override_font_sizes/bold_font_size = 92
 bbcode_enabled = true
 text = "[wave amp=50.0 freq=5.0 connected=1]RESTART[/wave]"
 fit_content = true
+
+[node name="Spikes" type="Node2D" parent="."]
+unique_name_in_owner = true
 
 [node name="Joints" type="Node2D" parent="."]
 unique_name_in_owner = true

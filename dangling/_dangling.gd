@@ -2,7 +2,6 @@ class_name Dangling extends RigidBody2D
 
 @onready var win_here: Sprite2D = %WinHere
 @onready var audio_stream_player: AudioStreamPlayer
-@onready var visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = %VisibleOnScreenNotifier2D
 
 @export var next_target: RigidBody2D
 @export var current_target: bool = false

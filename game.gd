@@ -77,10 +77,11 @@ func _on_pricked() -> void:
 		#TODO: have a better check to know if it's our first prick 
 		# (don't restart) or if we only have the blood drop... 
 		# which flew away and is lost forever (we want to restart)
-		get_tree().reload_current_scene()
+		get_tree().call_deferred("reload_current_scene")
 		Engine.time_scale = 1  # In case we pricked or spiked too fast and often
+		return
 	else:
-		setup_dangling()  # Setup the blood drop to be properly dangling.
+		call_deferred("setup_dangling")  # Setup the blood drop to be properly dangling.
 	pricked = true
 	you_lose.hide()
 	aie_audio_stream_player.play()

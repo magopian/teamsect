@@ -19,12 +19,6 @@ func _ready() -> void:
 	randomize_children_position(obstacles)
 	randomize_children_position(to_be_dangled)
 	super()
-	var next_label: RichTextLabel = next.get_node("%Label")
-	next_label.text = "[center][wave amp=50.0 freq=5.0 connected=1]RELOAD[/wave][/center]"
-	next_label.add_theme_font_size_override("normal_font_size", 42)
-	
-	next.show()
-	next.next_scene = (load(scene_file_path) as PackedScene)
 
 
 func generate_spawn_points() -> void:
@@ -42,8 +36,8 @@ func randomize_children_position(root_item: Node2D) -> void:
 	for item in root_item.get_children():
 		# -1 because it's an inclusive range, and -1 because the array is 0-indexed.
 		var i: int = randi_range(0, spawn_points.size() - 1 -1)
-		var position = spawn_points.pop_at(i)
-		item.global_position = position
+		var item_position = spawn_points.pop_at(i)
+		item.global_position = item_position
 
 
 func _on_win() -> void:
@@ -71,5 +65,10 @@ func generate_spikes() -> void:
 
 func _on_reload_button_pressed() -> void:
 	# This button is only available in the random levels
+	await get_tree().create_timer(0.1).timeout
+	get_tree().reload_current_scene()
+
+
+func _on_random_button_pressed() -> void:
 	await get_tree().create_timer(0.1).timeout
 	get_tree().reload_current_scene()
