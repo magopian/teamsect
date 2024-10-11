@@ -17,5 +17,5 @@ func _physics_process(_delta: float) -> void:
 	var mouse_position: Vector2 = get_global_mouse_position()
 	var viewport_size: Vector2 = get_viewport_rect().size as Vector2
 	mouse_position.x = clamp(mouse_position.x, sprite_size.x / 2, viewport_size.x - (sprite_size.x/2))
-	mouse_position.y = clamp(mouse_position.y, sprite_size.y / 2, viewport_size.y - (sprite_size.y / 2))
+	mouse_position.y = clamp(mouse_position.y, sprite_size.y / 2, viewport_size.y - 20)
 	position = mouse_position

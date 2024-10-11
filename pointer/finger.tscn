@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://djdf0fx05liv7" path="res://assets/sprites/finger.png" id="2_ta1g3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5ts1n"]
-radius = 24.0
-height = 90.0
+radius = 38.0
+height = 138.0
 
 [node name="Finger" type="RigidBody2D"]
 position = Vector2(-1, 0)
@@ -19,8 +19,7 @@ texture = ExtResource("2_ta1g3")
 offset = Vector2(0, -49)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
-rotation = 1.5708
+position = Vector2(1, -52)
 shape = SubResource("CapsuleShape2D_5ts1n")
 
 [node name="anchor" type="Marker2D" parent="."]
