@@ -79,6 +79,7 @@ func _on_pricked() -> void:
 		# (don't restart) or if we only have the blood drop... 
 		# which flew away and is lost forever (we want to restart)
 		get_tree().reload_current_scene()
+		Engine.time_scale = 1  # In case we pricked or spiked too fast and often
 	pricked = true
 	you_lose.hide()
 	aie_audio_stream_player.play()
