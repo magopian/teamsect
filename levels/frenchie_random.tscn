@@ -155,7 +155,25 @@ stream = SubResource("AudioStreamRandomizer_kjuen")
 [node name="OhNoAudioStreamPlayer" parent="." index="12"]
 stream = SubResource("AudioStreamRandomizer_qlsaw")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." index="16"]
+[node name="Spikes" type="Node2D" parent="." index="15"]
+unique_name_in_owner = true
+
+[node name="SpawnExcludeZone" type="Polygon2D" parent="." index="16"]
+unique_name_in_owner = true
+color = Color(1, 1, 1, 0.345098)
+polygon = PackedVector2Array(2509, 1513, 2512, -140, -55, -142, -54, 156, 836, 156, 832, 84, 1618, 86, 1615, 293, 2209, 296, 2219, 1213, 1306, 1205, 1295, 944, 978, 944, 977.035, 1217.68, 86, 1212, 86, 157, -141, 159, -150, 1536)
+
+[node name="YouWinLabel" parent="YouWin" index="0"]
+offset_left = 598.0
+offset_top = 441.0
+offset_right = 1687.0
+offset_bottom = 704.0
+
+[node name="Label3" parent="YouWin" index="1"]
+offset_left = 724.0
+offset_right = 1328.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." index="19"]
 offset_left = 27.0
 offset_top = 32.0
 offset_right = 777.0
@@ -186,18 +204,5 @@ theme_override_constants/outline_size = 20
 theme_override_font_sizes/font_size = 50
 text = "0"
 
-[node name="Spikes" type="Node2D" parent="." index="17"]
-unique_name_in_owner = true
-
-[node name="YouWinLabel" parent="YouWin" index="0"]
-offset_left = 598.0
-offset_top = 441.0
-offset_right = 1687.0
-offset_bottom = 704.0
-
-[node name="Label3" parent="YouWin" index="1"]
-offset_left = 724.0
-offset_right = 1328.0
-
-[connection signal="value_changed" from="HBoxContainer/NightmareLevel" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="YouWin/ReloadButton" to="." method="_on_reload_button_pressed"]
+[connection signal="value_changed" from="HBoxContainer/NightmareLevel" to="." method="_on_h_slider_value_changed"]
