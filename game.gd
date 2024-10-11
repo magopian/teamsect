@@ -99,6 +99,7 @@ func _on_win() -> void:
 
 
 func _on_spiked(body: RigidBody2D) -> void:
+	reset_win_here()
 	pricked = true # Well... it's as if :D
 	oh_no_audio_stream_player.play()
 	camera_shaker.apply_shake(10, 5)
@@ -107,6 +108,12 @@ func _on_spiked(body: RigidBody2D) -> void:
 	Engine.time_scale = 1
 	explode_dangling()
 	await get_tree().create_timer(1).timeout
+
+
+func reset_win_here() -> void:
+	for child in (to_be_dangled.get_children() as Array[Dangling]):
+		child.current_target = false
+	win_here.show()
 
 
 func explode_dangling() -> void:
