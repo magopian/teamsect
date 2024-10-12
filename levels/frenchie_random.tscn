@@ -211,5 +211,4 @@ offset_left = 724.0
 offset_right = 1328.0
 
 [connection signal="pressed" from="RandomButton" to="." method="_on_random_button_pressed"]
-[connection signal="value_changed" from="HBoxContainer/NightmareLevel" to="." method="_on_h_slider_value_changed"]
-[connection signal="pressed" from="YouWin/ReloadButton" to="." method="_on_reload_button_pressed"]
+[connection signal="pressed" from="YouWin/ReloadButton" to="." method="_on_random_button_pressed"]

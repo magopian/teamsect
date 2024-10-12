@@ -10,15 +10,37 @@ class_name BaseLevelRandom extends BaseLevel
 
 var polygon_points:  PackedVector2Array
 var spawn_points: Array[Vector2]
+var saved_scene: PackedScene = PackedScene.new()
 
 const DANGLING_SIZE: int = 200
 
 func _ready() -> void:
+	nightmare_level.value_changed.connect(_on_nightmare_level_changed)
+	nightmare_level_label.text = str(EventBus.nightmare_level)
 	generate_spawn_points()
-	nightmare_level.value = EventBus.nightmare_level
-	randomize_children_position(obstacles)
-	randomize_children_position(to_be_dangled)
+	if not is_restarted():
+		nightmare_level.value = EventBus.nightmare_level
+		randomize_children_position(obstacles)
+		randomize_children_position(to_be_dangled)
+		generate_spikes()
+		set_restarted()
+	else:
+		# We've restarted from a saved packed scene, don't do any setup.
+		print("we've restarted!")
+		# TODO: remove spawn points already taken
 	super()
+	saved_scene.pack(self)
+
+
+func set_restarted() -> void:
+	var restarted: Node = Node.new()
+	restarted.name = "restarted"
+	add_child(restarted)
+	restarted.owner = self
+
+
+func is_restarted() -> Node:
+	return find_child("restarted")
 
 
 func generate_spawn_points() -> void:
@@ -40,15 +62,27 @@ func randomize_children_position(root_item: Node2D) -> void:
 		item.global_position = item_position
 
 
+func _on_pricked() -> void:
+	if not is_inside_tree():
+		return
+	if pricked:
+		print("restarting")
+		return get_tree().call_deferred("change_scene_to_packed", saved_scene)
+	prick()
+
+
 func _on_win() -> void:
 	next.hide()
 	you_win.show()
+	Music.play_win()
 
 
-func _on_h_slider_value_changed(value: float) -> void:
+func _on_nightmare_level_changed(value: float) -> void:
+	if EventBus.nightmare_level == value:
+		return
+	print("nightmare level changed! ", nightmare_level.value)
 	EventBus.nightmare_level = value
-	nightmare_level_label.text = str(value)
-	generate_spikes()
+	get_tree().change_scene_to_file("res://levels/frenchie_random.tscn")
 
 
 func generate_spikes() -> void:
@@ -60,15 +94,11 @@ func generate_spikes() -> void:
 	for _i in range(nightmare_level.value):
 		var spike: Spike = spike_scene.instantiate()
 		spikes.add_child(spike)
+		spike.owner = self
+	saved_scene.pack(self)
 	randomize_children_position(spikes)
-
-
-func _on_reload_button_pressed() -> void:
-	# This button is only available in the random levels
-	await get_tree().create_timer(0.1).timeout
-	get_tree().reload_current_scene()
 
 
 func _on_random_button_pressed() -> void:
 	await get_tree().create_timer(0.1).timeout
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://levels/frenchie_random.tscn")

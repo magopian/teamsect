@@ -22,7 +22,6 @@ class_name BaseLevel extends Node2D
 
 var pricked: bool = false
 
-
 func _ready() -> void:
 	EventBus.new_dangling.connect(add_dangling)
 	EventBus.pricked.connect(_on_pricked)
@@ -77,11 +76,13 @@ func _on_pricked() -> void:
 		#TODO: have a better check to know if it's our first prick 
 		# (don't restart) or if we only have the blood drop... 
 		# which flew away and is lost forever (we want to restart)
-		get_tree().call_deferred("reload_current_scene")
-		Engine.time_scale = 1  # In case we pricked or spiked too fast and often
-		return
-	else:
-		call_deferred("setup_dangling")  # Setup the blood drop to be properly dangling.
+		return get_tree().call_deferred("reload_current_scene")
+	prick()
+
+
+func prick() -> void:
+	call_deferred("setup_dangling")  # Setup the blood drop to be properly dangling.
+	Engine.time_scale = 1  # In case we pricked or spiked too fast and often
 	pricked = true
 	you_lose.hide()
 	aie_audio_stream_player.play()
@@ -90,6 +91,7 @@ func _on_pricked() -> void:
 	camera_shaker.apply_shake(10, 5)
 	bandaid.current_target = true
 	restart_label.show()
+
 
 func _on_target_reached(target: RigidBody2D, body: RigidBody2D) -> void:
 	if body.name == "Blood drop":
