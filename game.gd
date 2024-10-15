@@ -17,6 +17,8 @@ class_name BaseLevel extends Node2D
 @onready var oh_no_audio_stream_player: AudioStreamPlayer = %OhNoAudioStreamPlayer
 @onready var joints: Node2D = %Joints
 @onready var you_lose: Node2D = %YouLose
+@onready var random_button: TextureButton = %RandomButton
+
 
 @export var explode_velocity: int = 3500
 
@@ -29,6 +31,7 @@ func _ready() -> void:
 	EventBus.win.connect(_on_win)
 	EventBus.spiked.connect(_on_spiked)
 	EventBus.dangling_ejected.connect(_on_dangling_ejected)
+	random_button.pressed.connect(_on_random_button_pressed)
 	blood_drop.dangling = true
 	restart_label.hide()
 	next.hide()
@@ -141,3 +144,6 @@ func explode_dangling() -> void:
 		joint.queue_free()
 	for child in (dangling.get_children() as Array[RigidBody2D]):
 		child.linear_velocity = Vector2.from_angle(randi_range(-180, 180)) * explode_velocity
+
+func _on_random_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://levels/frenchie_random.tscn")

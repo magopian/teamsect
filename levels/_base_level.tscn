@@ -384,7 +384,8 @@ text = "[center]Would you like to try random levels?[/center]
 "
 scroll_active = false
 
-[node name="ReloadButton" type="TextureButton" parent="YouWin"]
+[node name="RandomButton" type="TextureButton" parent="YouWin"]
+unique_name_in_owner = true
 offset_left = 1339.0
 offset_top = 694.0
 offset_right = 1588.0
@@ -394,7 +395,7 @@ texture_normal = ExtResource("15_6pkkh")
 texture_pressed = ExtResource("16_w8i5v")
 stretch_mode = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="YouWin/ReloadButton"]
+[node name="HBoxContainer" type="HBoxContainer" parent="YouWin/RandomButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -406,12 +407,12 @@ offset_bottom = -37.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="YouWin/ReloadButton/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="YouWin/RandomButton/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("16_uyu60")
 expand_mode = 2
 
-[node name="Label2" type="RichTextLabel" parent="YouWin/ReloadButton/HBoxContainer"]
+[node name="Label2" type="RichTextLabel" parent="YouWin/RandomButton/HBoxContainer"]
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
@@ -426,6 +427,6 @@ bbcode_enabled = true
 text = "[center][wave amp=50.0 freq=5.0 connected=1]RANDOM[/wave][/center]"
 scroll_active = false
 
-[node name="ClickSound" parent="YouWin/ReloadButton" instance=ExtResource("17_m3t8s")]
+[node name="ClickSound" parent="YouWin/RandomButton" instance=ExtResource("17_m3t8s")]
 
 [node name="Confetti" parent="YouWin" instance=ExtResource("7_kaasl")]

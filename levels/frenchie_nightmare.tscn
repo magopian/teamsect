@@ -73,5 +73,3 @@ position = Vector2(679, 50)
 
 [node name="AieAudioStreamPlayer" parent="." index="11"]
 stream = SubResource("AudioStreamRandomizer_822p4")
-
-[connection signal="pressed" from="YouWin/ReloadButton" to="." method="_on_reload_button_pressed"]
